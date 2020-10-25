@@ -5,15 +5,15 @@
 
 -------------- python
 
-Dt sysinfo
+dt sysinfo
 
-Dt sysprep
+dt sysprep
 
-Dt build
+dt build
 
-Starthdfs
+starthdfs
 
-Stophdfs
+stophdfs
 
 startyarn
 
