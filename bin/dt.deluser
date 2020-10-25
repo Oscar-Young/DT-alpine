@@ -4,25 +4,24 @@ nc -w 2 -z ds01 22
 [ "$?" != "0" ] && echo "ds01 not found" && exit;
 
 echo "--- gw ---"
-for user in user01 user02 user03 user04 user05 user06 user07 user08 user09 user10 user11 user12 user13 user14 user15 user16 user17 user18 user19 user20  
+while read user password  
 do
   id -u $user &>/dev/null
   [ "$?" != 0 ] && echo "$user...not found" && continue
   sudo deluser --remove-home $user &>/dev/null && echo "$user...del"
-done
+done < $DT_HOME/conf/userlist
 exit
+
 echo "---ds01---"
-for user in user01 user02 user03 user04 user05 user06 user07 user08 user09 user10 user11 user12 user13 user14 user15 user16 user17 user18 user19 user20  
+while read user password  
 do
-  ssh ds01 "id -u $user &>/dev/null"
+  ssh -n ds01 "id -u $user &>/dev/null"
   [ "$?" != 0 ] && echo "$user...not found" && continue
-  ssh ds01 "sudo deluser $user &>/dev/null && sudo rm -r /home/$user" && echo "$user...del"
-
-done
+  ssh -n ds01 "sudo deluser $user &>/dev/null && sudo rm -r /home/$user" && echo "$user...del"
+done < $DT_HOME/conf/userlist
 
 echo "---ds01---"
-for user in user01 user02 user03 user04 user05 user06 user07 user08 user09 user10 user11 user12 user13 user14 user15 user16 user17 user18 user19 user20  
+while read user password  
 do
-  ssh mas01 "hdfs dfs -rm -r /user/$user"
-  
-done
+  ssh -n mas01 "hdfs dfs -rm -r /user/$user"
+done < $DT_HOME/conf/userlist
