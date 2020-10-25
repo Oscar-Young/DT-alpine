@@ -13,3 +13,5 @@ do
   [ "$?" != "0" ]  && echo "$n fail" && continue
   echo -n "$n start datanode..." && ssh $n hadoop-daemon.sh start datanode &>/dev/null && echo "OK" || echo "running"
 done
+
+echo 'hi'
