@@ -15,4 +15,3 @@ done
 ssh mas01 'hdfs namenode -format -clusterID cute' &>/dev/null
 [ "$?" != "0" ] && echo "formathdfs failure" && exit 1
 echo "formathdfs ok"
-
