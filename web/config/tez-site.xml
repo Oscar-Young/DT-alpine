@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+  <property>
+    <name>tez.lib.uris</name>
+    <value>${fs.default.name}/apps/tez,${fs.default.name}/apps/tez/lib/</value>
+  </property>
+  
+  <property>
+    <name>tez.am.resource.memory.mb</name>
+    <value>512</value>
+  </property>
+  
+  <property>
+    <name>mapreduce.map.memory.mb</name>
+    <value>512</value>
+  </property>
+
+  <property>
+    <name>mapreduce.reduce.memory.mb</name>
+    <value>512</value>
+  </property>
+</configuration>

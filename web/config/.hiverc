@@ -1,0 +1,2 @@
+set hive.cli.print.header=true;
+set hive.execution.engine=tez

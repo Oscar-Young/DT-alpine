@@ -1,0 +1,27 @@
+
+gw=$(route -n | grep -e "^0.0.0.0 ")
+GWIF=${gw##* }
+ips=$(ifconfig $GWIF | grep 'inet ')
+IP=$(echo $ips | cut -d' ' -f2)
+NETID=${IP%.*}
+GW=$(route -n | grep -e '^0.0.0.0' | tr -s \ - | cut -d ' ' -f2)
+
+echo "[`hostname`]"
+echo "--------------------------------------------------------"
+cn=$(cat /proc/cpuinfo | grep 'model name' | head -n 1 | cut -d ':' -f2 | tr -s ' ')
+echo -n "CPU : $cn (core: "
+cn=$(cat /proc/cpuinfo | grep 'model name' | wc -l)
+echo "$cn)"
+echo -n -e "Memory : "
+echo $(free -mh | grep Mem | awk '{print 1}')
+
+
+echo "IP Address : $IP"
+echo "Default Gateway : $GW"
+echo ""
+
+java -version &> /tmp/java 
+[ "$?" != "0" ] && echo 'JAVA NOT FOUND' || cat /tmp/java
+echo ""
+
+

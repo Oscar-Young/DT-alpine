@@ -1,0 +1,15 @@
+#!/bin/bash
+for n in mas01 
+do
+  nc -w 1 -z $n 22 &>/dev/null
+  [ "$?" != "0" ]  && echo "$n fail" && continue
+  echo -n "$n start namenode..." && ssh $n hadoop-daemon.sh start namenode &>/dev/null && echo "OK" || echo "running"
+  echo -n "$n start secondarynamenode..." && ssh $n hadoop-daemon.sh start secondarynamenode &>/dev/null && echo "OK" || echo "running"
+done
+
+for n in wka01 wka02 wka03 wka04 
+do
+  nc -w 1 -z $n 22 &>/dev/null
+  [ "$?" != "0" ]  && echo "$n fail" && continue
+  echo -n "$n start datanode..." && ssh $n hadoop-daemon.sh start datanode &>/dev/null && echo "OK" || echo "running"
+done

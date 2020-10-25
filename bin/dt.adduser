@@ -1,0 +1,49 @@
+#!/bin/bash
+[ -f $DT_HOME/conf/dt-env.sh ] && source $DT_HOME/conf/dt-env.sh && echo 'Loading DT environment...OK'
+
+# build ds01
+nc -w 2 -z ds01 22
+[ "$?" != "0" ] && echo "ds01 not found" && exit;
+# ssh ds01 "wget -qO - $WEB_URL/script/sysinfo | bash"
+# ssh ds01 "wget -qO - $WEB_URL/script/sysprep | bash"
+# ssh ds01 "wget -qO - $WEB_URL/script/build | bash"
+
+# Create User on ds host
+ds=$(cat /etc/hosts | grep -E "ds" | tr '\t' ' ' | cut -d' ' -f1)
+
+echo "--- gw ---"
+while read user password
+do
+  # Check user
+  id -u $user &>/dev/null
+  [ "$?" == 0 ] && echo "$user already exists" && continue
+  sudo useradd -m -s /bin/bash $user &>/dev/null && echo $user:$password |sudo chpasswd &>/dev/null && echo "Create $user"
+  echo "sshpass -p'$user' ssh $user@ds01 && exit" | sudo tee -a /home/$user/.bashrc &> /dev/null
+done < $DT_HOME/conf/userlist
+
+# Create User on ds01
+echo "---ds01---"
+while read user password
+do
+  # Check user
+  ssh -n ds01 "id -u $user &>/dev/null"
+  [ "$?" == 0 ] && echo "$user already exists" && continue
+  ssh -n ds01 "sudo adduser $user -s /bin/bash -D /home/$user && echo $password:$password |sudo chpasswd &>/dev/null" && echo "Create $user"
+  ssh -n ds01 "sudo mkdir -p /home/$user/.ssh && sudo cp -r /home/bigred/.ssh/environment /home/$user/.ssh/environment"
+done < $DT_HOME/conf/userlist
+
+# Create hdfs home on mas01
+echo "---hdfs---"
+while read user password
+do
+  ssh -n mas01 "hdfs dfs -mkdir -p /user/$user && hdfs dfs -chown $user:bigboss /user/$user && hdfs dfs -chmod 770 /user/$user" &>/dev/null  && echo "Create $user HDFS home...OK" 
+done < $DT_HOME/conf/userlist
+
+# Hive reset db
+while read user password
+do
+  sshpass -p $user ssh -n $user@ds01 "schematool -dbType derby -initSchema"  && echo "Init $user derby...OK"
+  sshpass -p $password ssh -n $user@ds01 " wget -q $WEB_URL/config/.hiverc"  && echo "Add $user .hiverc...OK"
+done < $DT_HOME/conf/userlist
+
+ssh mas01 "hdfs dfs -chmod -R 777 /tmp"

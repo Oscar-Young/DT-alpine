@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+   <property>
+      <name>fs.defaultFS</name>
+      <value>hdfs://mas01:8020</value>
+   </property>
+   <property>
+      <name>fs.default.name</name>
+      <value>hdfs://mas01:8020</value>
+   </property>
+   <property>
+      <name>io.compression.codecs</name>
+      <value>org.apache.hadoop.io.compress.BZip2Codec,org.apache.hadoop.io.compress.GzipCodec</value>
+   </property>
+   <property>
+      <name>hadoop.user.group.static.mapping.overrides</name>
+      <value>bigred=bigboss;rbean=soup;gbean=soup,rice;ybean=rice</value>
+   </property>
+   <!--
+ <property>
+    <name>hadoop.security.authorization</name>
+    <value>true</value>
+ </property>
+ <property>
+    <name>hadoop.proxyuser.root.groups</name>
+    <value>*</value>
+ </property>
+ <property>
+    <name>hadoop.proxyuser.root.hosts</name>
+    <value>*</value>
+ </property>
+ -->
+   <property>
+      <name>hadoop.proxyuser.bigred.groups</name>
+      <value>*</value>
+   </property>
+   <property>
+      <name>hadoop.proxyuser.bigred.hosts</name>
+      <value>*</value>
+   </property>
+</configuration>
