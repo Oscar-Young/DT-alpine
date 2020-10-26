@@ -29,4 +29,4 @@ startyarn
 
 --------------
 
-![Alt text](./doc/img.png)
+![Alt text](./doc/picture/composition.png)
