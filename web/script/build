@@ -12,7 +12,7 @@ echo "[`hostname`]"
 [ ! -d "/opt/apache-hive-2.3.7-bin" ] && echo -n "Install Hive..." && wget -qO - "$WEB_URL/stack/apache-hive-2.3.7-bin.tar.gz" | sudo tar -zxvf - -C /opt &>/dev/null  && echo "OK"
 # Install Tez
 [ -d "/opt/apache-tez-0.9.2-bin" ] && echo "Tez is already exists" 
-[ ! -d "/opt/apache-tez-0.9.2-bin" ] && echo -n "Install Tez..." && sudo mkdir -p /opt/apache-tez-0.9.2-bin/conf && wget -qO - "$WEB_URL/stack/apache-tez-0.9.2-bin.tar.gz" |  sudo tar -zxvf - -C /opt/apache-tez-0.9.2-bin &>/dev/null && echo "OK"
+[ ! -d "/opt/apache-tez-0.9.2-bin" ] && echo -n "Install Tez..." && sudo mkdir -p /opt/apache-tez-0.9.2-bin/conf && wget -qO - "$WEB_URL/stack/apache-tez-0.9.2-bin.tar.gz" |  sudo tar -zxvf - -C /opt &>/dev/null && echo "OK"
 
 # SSH Environment
 wget -qO - "$WEB_URL/config/environment" | sudo tee ~/.ssh/environment &>/dev/null
