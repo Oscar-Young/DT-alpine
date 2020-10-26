@@ -29,4 +29,4 @@ startyarn
 
 --------------
 
-![Alt text](./doc/picture/composition.png)
+![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/composition.png)
