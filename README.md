@@ -5,7 +5,7 @@
 
 -------------- python
 
-ssh-keygen -t rsa-P
+$ `ssh-keygen -t rsa-P`
 
 $ `ssh-copy-id bigred@192.168.10.10`
 
