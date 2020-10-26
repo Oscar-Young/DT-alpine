@@ -22,3 +22,5 @@ startyarn
 ![Alt text][https://cdn.discordapp.com/attachments/766667621176705070/769964913334288424/image.png]
 
 -----------
+
+![Alt text](/path/to/img.jpg)
