@@ -12,8 +12,10 @@ cn=$(cat /proc/cpuinfo | grep 'model name' | head -n 1 | cut -d ':' -f2 | tr -s 
 echo -n "CPU : $cn (core: "
 cn=$(cat /proc/cpuinfo | grep 'model name' | wc -l)
 echo "$cn)"
-echo -n -e "Memory : "
-echo $(free -mh | grep Mem | awk '{print 1}')
+
+m=$(free -mh | grep Mem:)
+echo -n "Memory : "
+echo $m | cut -d' ' -f2
 
 
 echo "IP Address : $IP"
