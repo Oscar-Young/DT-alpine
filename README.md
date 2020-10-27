@@ -1,6 +1,6 @@
 # 資料科技平台 系統架構圖
 
-![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/composition.png)
+![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/composition.jpg)
 
 
 ## 環境安裝及系統部署
