@@ -166,7 +166,7 @@ wka04 start datanode...OK
 
 `startyarn`
 
-``
+`執行結果`
 
 ```
 mas01 start resourcemanager...OK
