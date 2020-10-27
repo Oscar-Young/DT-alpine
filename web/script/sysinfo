@@ -15,7 +15,7 @@ echo "$cn)"
 
 m=$(free -mh | grep Mem:)
 echo -n "Memory : "
-echo $m | cut -d' ' -f2
+echo $m | cut -d' ' -f2 | sed 's/.$//'
 
 
 echo "IP Address : $IP"
