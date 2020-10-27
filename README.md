@@ -54,7 +54,7 @@ export WEB_PORT="8888"
 export WEB_URL=$WEB_HOST:$WEB_PORT
 ```
 
-## 使用dt程式部署haoop
+## 使用dt程式部署hadoop
 
 `dt sysinfo`
 
