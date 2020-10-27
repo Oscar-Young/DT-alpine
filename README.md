@@ -21,9 +21,7 @@
 
 * 下載githun資料
 
-```bash
-nano .bashrc
-```
+$`nano .bashrc`
 
 dt sysinfo
 
