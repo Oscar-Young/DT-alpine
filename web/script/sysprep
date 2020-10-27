@@ -7,15 +7,15 @@ http://dl-cdn.alpinelinux.org/alpine/v$(cat /etc/alpine-release | cut -d'.' -f1,
 EOF
 [ "$?" == "0" ] && echo "Add apk repositories... OK"
 sudo apk update &>/dev/null
-[ "$?" == "0" ] && echo "update apk repositories... OK"
+[ "$?" == "0" ] && echo "Update apk repositories... OK"
 
 # Install Openjdk8
 sudo apk add openjdk8 &>/dev/null
-[ "$?" == "0" ] && echo "Install openjdk-1.8-jdk ok" 
+[ "$?" == "0" ] && echo "Install openjdk-1.8-jdk... OK" 
 sudo rm -rf /var/cache/apk/* &>/dev/null
 
 # SSH config setting
 sudo sed -i 's/^export PATH/#&/' /etc/profile  && \
 sudo sed -i '/PermitUserEnvironment/c\PermitUserEnvironment yes' /etc/ssh/sshd_config
 sudo /etc/init.d/sshd restart &> /dev/null
-[ "$?" == "0" ] && echo "Setting SSH environment ok"
+[ "$?" == "0" ] && echo "Setting SSH environment... OK"
