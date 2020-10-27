@@ -79,9 +79,9 @@ OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 ```
 [wka01]
 Add apk repositories... OK
-update apk repositories... OK
-Install openjdk-1.8-jdk ok
-Setting SSH environment ok
+Update apk repositories... OK
+Install openjdk-1.8-jdk... OK
+Setting SSH environment... OK
 ```
 
 `dt build`
