@@ -1,19 +1,29 @@
 # DT
 
 #YI-CHEN
-#AB
+#WL
 
--------------- python
+--------------
 
 * 產生 SSH 公私鑰
 
-`ssh-keygen -t rsa -P ` 
+`ssh-keygen -t rsa -P `
 
 * 複製公鑰至各台電腦
 
 `ssh-copy-id Name@Hosts`
 
 `ssh-copy-id bigred@192.168.10.10`
+
+* 下載githun資料
+
+`git clone 'https://github.com/Oscar-Young/DT-alpine'`
+
+* 下載githun資料
+
+```bash
+nano .bashrc
+```
 
 dt sysinfo
 
