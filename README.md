@@ -125,7 +125,22 @@ wka04 clean
 formathdfs ok
 ```
 
-`stophdfs && stopyarn`
+`stophdfs`
+
+```
+wka01 stop datanode...OK
+wka02 stop datanode...OK
+wka03 stop datanode...OK
+wka04 stop datanode...OK
+mas01 stop secondarynamenode...OK
+mas01 stop namenode...OK
+```
+
+`stopyarn`
+
+```
+
+```
 
 `starthdfs && startyarn`
 
