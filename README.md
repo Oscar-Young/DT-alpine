@@ -21,7 +21,7 @@
 * 將此檔加入環境變數，請設定自己資料夾的路徑，以下參考
 
 `nano .bashrc`
-```
+```bash
 export PATH=/home/username/DT-alpine/bin:$PATH
 export DT_HOME=~/DT-alpine
 ```
