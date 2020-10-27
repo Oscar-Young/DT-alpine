@@ -63,7 +63,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 [wka01]
 --------------------------------------------------------
 CPU :  Intel(R) Atom(TM) x5-Z8350 CPU @ 1.44GHz (core: 4)
-Memory : 1
+Memory : 3.3G
 IP Address : addr:192.168.XXX.XXX
 Default Gateway : 192.168.XXX.XXX
 
@@ -74,7 +74,11 @@ OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 
 `dt sysprep`
 
+`執行結果`
+
 `dt build`
+
+`執行結果`
 
 * 開啟hadoop
 
