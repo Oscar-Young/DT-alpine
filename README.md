@@ -58,7 +58,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 `dt sysinfo`
 
-`執行結果`
+執行結果
 
 ```
 [wka01]
@@ -75,7 +75,7 @@ OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 
 `dt sysprep`
 
-`執行結果`
+執行結果
 
 ```
 Loading DT environment... OK
@@ -89,7 +89,7 @@ Setting SSH environment... OK
 
 `dt build`
 
-`執行結果`
+執行結果
 
 ```
 Loading DT environment... OK
@@ -114,7 +114,7 @@ tez-site.xml copied
 
 `formatdfs`
 
-**執行結果
+執行結果
 
 `Are you sure ? (YES/NO) YES`
 
@@ -128,7 +128,7 @@ formathdfs ok
 
 `stophdfs`
 
-`執行結果`
+執行結果
 
 ```
 wka01 stop datanode...OK
@@ -141,7 +141,7 @@ mas01 stop namenode...OK
 
 `stopyarn`
 
-`執行結果`
+執行結果
 
 ```
 wka01 stop nodemanager...OK
@@ -154,7 +154,7 @@ mas01 stop historyserver...OK
 
 `starthdfs`
 
-`執行結果`
+執行結果
 
 ```
 mas01 start namenode...OK
@@ -167,7 +167,7 @@ wka04 start datanode...OK
 
 `startyarn`
 
-`執行結果`
+執行結果
 
 ```
 mas01 start resourcemanager...OK
