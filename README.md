@@ -113,6 +113,8 @@ tez-site.xml copied
 
 `formatdfs`
 
+`執行結果`
+
 `Are you sure ? (YES/NO) YES`
 
 ```
