@@ -90,6 +90,25 @@ Setting SSH environment... OK
 
 `執行結果`
 
+```
+Loading DT environment... OK
+Web Server is already start : 192.168.XXX.XXX:XXXX
+[wka01]
+Install Hadoop... OK
+Install Pig... OK
+Install Hive... OK
+Install Tez... OK
+environment copied
+hosts copied
+core-site.xml copied
+hdfs-site.xml copied
+mapred-site.xml copied
+yarn-site.xml copied
+pig.properties copied
+log4j.properties copied
+tez-site.xml copied
+```
+
 * 開啟hadoop
 
 `formatdfs`
