@@ -56,13 +56,16 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 * 使用dt程式部署hadoop
 
 `dt sysinfo`
+
+`執行結果`
+
 ```
 [wka01]
 --------------------------------------------------------
 CPU :  Intel(R) Atom(TM) x5-Z8350 CPU @ 1.44GHz (core: 4)
 Memory : 1
-IP Address : addr:192.168.30.20
-Default Gateway : 192.168.30.254
+IP Address : addr:192.168.XXX.XXX
+Default Gateway : 192.168.XXX.XXX
 
 openjdk version "1.8.0_252"
 OpenJDK Runtime Environment (IcedTea 3.16.0) (Alpine 8.252.09-r0)
@@ -72,8 +75,8 @@ OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 --------------------------------------------------------
 CPU :  Intel(R) Atom(TM) x5-Z8350 CPU @ 1.44GHz (core: 4)
 Memory : 1
-IP Address : addr:192.168.30.21
-Default Gateway : 192.168.30.254
+IP Address : addr:192.168.XXX.XXX
+Default Gateway : 192.168.XXX.XXX
 
 openjdk version "1.8.0_252"
 OpenJDK Runtime Environment (IcedTea 3.16.0) (Alpine 8.252.09-r0)
