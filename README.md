@@ -127,6 +127,8 @@ formathdfs ok
 
 `stophdfs`
 
+`執行結果`
+
 ```
 wka01 stop datanode...OK
 wka02 stop datanode...OK
@@ -138,11 +140,42 @@ mas01 stop namenode...OK
 
 `stopyarn`
 
-```
+`執行結果`
 
 ```
+wka01 stop nodemanager...OK
+wka02 stop nodemanager...OK
+wka03 stop nodemanager...OK
+wka04 stop nodemanager...OK
+mas01 stop resourcemanager...OK
+mas01 stop historyserver...OK
+```
 
-`starthdfs && startyarn`
+`starthdfs`
+
+``
+
+```
+mas01 start namenode...OK
+mas01 start secondarynamenode...OK
+wka01 start datanode...OK
+wka02 start datanode...OK
+wka03 start datanode...OK
+wka04 start datanode...OK
+```
+
+`startyarn`
+
+``
+
+```
+mas01 start resourcemanager...OK
+mas01 start historyserver...OK
+wka01 start nodemanager...OK
+wka02 start nodemanager...OK
+wka03 start nodemanager...OK
+wka04 start nodemanager...OK
+```
 
 ----------------------------------------------------------------------
 
