@@ -49,7 +49,7 @@ export DT_HOME=~/DT-alpine
 ```bash
 #!/bin/bash
 export DT_HOME="/home/username/DT-alpine"
-export WEB_HOST="192.168.10.254"
+export WEB_HOST="192.168.XXX.XXX"
 export WEB_PORT="8888"
 export WEB_URL=$WEB_HOST:$WEB_PORT
 ```
