@@ -53,7 +53,7 @@ export WEB_PORT="8888"
 export WEB_URL=$WEB_HOST:$WEB_PORT
 ```
 
-<font size=7>黑體</font>
+<font size=72>黑體</font>
 
 `dt sysinfo`
 
