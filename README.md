@@ -153,7 +153,7 @@ mas01 stop historyserver...OK
 
 `starthdfs`
 
-``
+`執行結果`
 
 ```
 mas01 start namenode...OK
