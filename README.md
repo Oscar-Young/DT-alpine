@@ -2,7 +2,7 @@
 
 
 #GW主機
---------------
+----------------------------------------------------------------------
 
 * 產生 SSH 公私鑰
 
@@ -51,18 +51,18 @@ export WEB_PORT="8888"
 export WEB_URL=$WEB_HOST:$WEB_PORT
 ```
 
-dt sysinfo
+* 使用dt程式
 
-dt sysprep
+`dt sysinfo`
 
-dt build
+`dt sysprep`
 
-starthdfs
+`dt build`
 
-stophdfs
+`stophdfs && stopyarn`
 
-startyarn
+`starthdfs && startyarn`
 
---------------
+----------------------------------------------------------------------
 
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/composition.png)
