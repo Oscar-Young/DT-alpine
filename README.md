@@ -3,7 +3,7 @@
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/composition.png)
 
 
-#GW主機
+## 環境安裝及系統部署
 ----------------------------------------------------------------------
 
 * 產生 SSH 公私鑰
@@ -53,7 +53,7 @@ export WEB_PORT="8888"
 export WEB_URL=$WEB_HOST:$WEB_PORT
 ```
 
-## *使用dt程式部署haoop##
+## *使用dt程式部署haoop
 
 `dt sysinfo`
 
