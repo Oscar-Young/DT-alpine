@@ -77,6 +77,8 @@ OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 `執行結果`
 
 ```
+Loading DT environment... OK
+Web Server is already start : 192.168.XXX.XXX:XXXX
 [wka01]
 Add apk repositories... OK
 Update apk repositories... OK
