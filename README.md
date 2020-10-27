@@ -34,13 +34,13 @@ export DT_HOME=~/DT-alpine
 `nano DT-alpine/web/config/hosts`
 ```
 127.0.0.1 localhost
-192.168.10.254 gw
-192.168.10.10 mas01
-192.168.10.20 wka01
-192.168.10.21 wka02
-192.168.10.22 wka03
-192.168.10.23 wka04
-192.168.10.30 ds01
+192.168.XXX.XXX gw
+192.168.XXX.XXX mas01
+192.168.XXX.XXX wka01
+192.168.XXX.XXX wka02
+192.168.XXX.XXX wka03
+192.168.XXX.XXX wka04
+192.168.XXX.XXX ds01
 ```
 
 * 修改dt環境變數，請設定好自己的IP還有資料夾路徑，以下參考
