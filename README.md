@@ -113,6 +113,16 @@ tez-site.xml copied
 
 `formatdfs`
 
+`Are you sure ? (YES/NO) YES`
+
+```
+wka01 clean
+wka02 clean
+wka03 clean
+wka04 clean
+formathdfs ok
+```
+
 `stophdfs && stopyarn`
 
 `starthdfs && startyarn`
