@@ -16,7 +16,7 @@
 
 `ssh-copy-id bigred@192.168.10.10`
 
-* 下載githun資料
+* 下載githu資料
 
 `git clone 'https://github.com/Oscar-Young/DT-alpine'`
 
