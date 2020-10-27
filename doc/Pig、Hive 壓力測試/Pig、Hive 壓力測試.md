@@ -1,7 +1,9 @@
-六都兒童口罩各數
+# 計算六都兒童口罩各數
+=======================================
 
-pig
--------------------------------------
+Pig
+-----------------------------------
+
 data = load '/user/user01/01-04-2020-18-14.csv' using PigStorage(',')as(code:chararray,name:chararray,address:chararray,phone:chararray,adult:int,kid:int,time:chararray);
 
 f = filter data by $2 MATCHES '(臺北市|新北市|桃園市|臺中市|臺南市|高雄市).*';
@@ -23,15 +25,6 @@ dump i;
 | Tez | 55.389s | 55.272s | 57.463s | 56.322s | 55.189s | 55.927s |
 
 
-----一人連線----
-55.389
-55.272
-57.463
-56.322
-55.189
-----------------
-平均:55.927
-----------------
 
 ----十人連線----
 150.674
@@ -47,6 +40,8 @@ dump i;
 ----------------
 平均:195.0772
 ----------------
+
+Hive
 
 SELECT col1,col2 FROM 
 (SELECT SUBSTR(address,1,3) AS col1 ,SUM(kid) AS col2 FROM mask01 GROUP BY SUBSTR(address,1,3))
