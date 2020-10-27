@@ -1,5 +1,7 @@
 # DT
 
+![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/composition.png)
+
 
 #GW主機
 ----------------------------------------------------------------------
@@ -69,4 +71,3 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 ----------------------------------------------------------------------
 
-![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/composition.png)
