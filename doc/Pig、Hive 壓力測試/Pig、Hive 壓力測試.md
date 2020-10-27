@@ -3,7 +3,7 @@
 ## Pig
 -----------------------------------
 
-```python
+```pig
 data = load '/user/user01/01-04-2020-18-14.csv' using PigStorage(',')as(code:chararray,name:chararray,address:chararray,phone:chararray,adult:int,kid:int,time:chararray);
 f = filter data by $2 MATCHES '(臺北市|新北市|桃園市|臺中市|臺南市|高雄市).*';
 g = foreach f generate SUBSTRING($2,0,3),$5;
@@ -30,7 +30,7 @@ dump i;
 ## Hive
 -----------------------------------
 
-```python
+```sql
 SELECT col1,col2 FROM 
 (SELECT SUBSTR(address,1,3) AS col1 ,SUM(kid) AS col2 FROM mask01 GROUP BY SUBSTR(address,1,3))
  AS step1 WHERE col1 LIKE '臺北市%' or col1 like'新北市%' or col1 like'桃園市%' or col1 like'臺中市%' or col1 like'臺南市%' or col1 like'高雄市%';
