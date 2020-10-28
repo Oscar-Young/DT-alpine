@@ -33,7 +33,7 @@ DUMP i;
 ```sql
 SELECT col1,col2 FROM 
 (SELECT SUBSTR(address,1,3) AS col1 ,SUM(kid) AS col2 FROM mask01 GROUP BY SUBSTR(address,1,3))
- AS step1 WHERE col1 LIKE '臺北市%' or col1 like'新北市%' or col1 like'桃園市%' or col1 like'臺中市%' or col1 like'臺南市%' or col1 like'高雄市%';
+ AS step1 WHERE col1 LIKE '臺北市%' OR col1 LIKE'新北市%' OR col1 LIKE'桃園市%' OR col1 LIKE'臺中市%' OR col1 LIKE'臺南市%' OR col1 LIKE'高雄市%';
 ```
 -------------------------------------
 
