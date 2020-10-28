@@ -4,12 +4,12 @@
 -----------------------------------
 
 ```pig
-data = load '/user/user01/01-04-2020-18-14.csv' using PigStorage(',')as(code:chararray,name:chararray,address:chararray,phone:chararray,adult:int,kid:int,time:chararray);
-f = filter data by $2 MATCHES '(臺北市|新北市|桃園市|臺中市|臺南市|高雄市).*';
-g = foreach f generate SUBSTRING($2,0,3),$5;
-h = group g by $0;
-i = foreach h generate $0,SUM(g.kid);
-dump i;
+data = LOAD '/user/user01/01-04-2020-18-14.csv' USING PigStorage(',') as (code:chararray,name:chararray,address:chararray,phone:chararray,adult:int,kid:int,time:chararray);
+f = FILTER data BY $2 MATCHES '(臺北市|新北市|桃園市|臺中市|臺南市|高雄市).*';
+g = FOREACH f GENERATE SUBSTRING($2,0,3),$5;
+h = GROUP g BY $0;
+i = FOREACH h GENERATE $0,SUM(g.kid);
+DUMP i;
 ```
 -------------------------------------
 
