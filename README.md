@@ -24,7 +24,8 @@
 
 * 將此檔加入環境變數，請設定自己資料夾的路徑，以下參考
 
-`nano .bashrc`
+>`nano .bashrc `
+
 ```bash
 export PATH=/home/username/DT-alpine/bin:$PATH
 export DT_HOME=~/DT-alpine
@@ -32,7 +33,8 @@ export DT_HOME=~/DT-alpine
 
 * 修改hosts，請設定好自己的IP，以下參考
 
-`nano DT-alpine/web/config/hosts`
+>`nano DT-alpine/web/config/hosts`
+
 ```
 127.0.0.1 localhost
 192.168.XXX.XXX gw
@@ -46,7 +48,8 @@ export DT_HOME=~/DT-alpine
 
 * 修改dt環境變數，請設定好自己的IP還有資料夾路徑，以下參考
 
-`nano DT-alpine/conf/dt-env.sh`
+>`nano DT-alpine/conf/dt-env.sh`
+
 ```bash
 #!/bin/bash
 export DT_HOME="/home/username/DT-alpine"
@@ -57,7 +60,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 ## 使用dt程式部署hadoop
 
-`dt sysinfo`
+>`dt sysinfo`
 
 執行結果:
 
@@ -74,7 +77,7 @@ OpenJDK Runtime Environment (IcedTea 3.16.0) (Alpine 8.252.09-r0)
 OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 ```
 
-`dt sysprep`
+>`dt sysprep`
 
 執行結果:
 
@@ -88,7 +91,7 @@ Install openjdk-1.8-jdk... OK
 Setting SSH environment... OK
 ```
 
-`dt build`
+>`dt build`
 
 執行結果:
 
@@ -113,7 +116,7 @@ tez-site.xml copied
 
 ## 開啟hadoop
 
-`formatdfs`
+>`formatdfs`
 
 執行結果:
 
@@ -127,7 +130,7 @@ wka04 clean
 formathdfs ok
 ```
 
-`stophdfs`
+>`stophdfs`
 
 執行結果:
 
@@ -140,7 +143,7 @@ mas01 stop secondarynamenode...OK
 mas01 stop namenode...OK
 ```
 
-`stopyarn`
+>`stopyarn`
 
 執行結果:
 
@@ -153,7 +156,7 @@ mas01 stop resourcemanager...OK
 mas01 stop historyserver...OK
 ```
 
-`starthdfs`
+>`starthdfs`
 
 執行結果:
 
@@ -166,7 +169,7 @@ wka03 start datanode...OK
 wka04 start datanode...OK
 ```
 
-`startyarn`
+>`startyarn`
 
 執行結果:
 
@@ -179,7 +182,7 @@ wka03 start nodemanager...OK
 wka04 start nodemanager...OK
 ```
 
-`buildtez`
+>`buildtez`
 
 執行結果:
 
