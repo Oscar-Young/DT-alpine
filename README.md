@@ -58,7 +58,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 ## 使用dt程式部署hadoop
 
-*查看所有機器的硬體規格、IP、Gateway、Openjdk版本
+* 查看所有機器的硬體規格、IP、Gateway、Openjdk版本
 >`dt sysinfo`
 
 執行結果:
@@ -75,7 +75,7 @@ openjdk version "1.8.0_252"
 OpenJDK Runtime Environment (IcedTea 3.16.0) (Alpine 8.252.09-r0)
 OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 ```
-*更新套件、安裝Openjdk8、allows users to present environment options to the ssh daemon
+* 更新套件、安裝Openjdk8、allows users to present environment options to the ssh daemon
 >`dt sysprep`
 
 執行結果:
@@ -90,7 +90,7 @@ Install openjdk-1.8-jdk... OK
 Setting SSH environment... OK
 ```
 
-*安裝hadoop-2.10.1、pig-0.17.0、hive-2.3.7、tez-0.9.2，複製環境變數文件、hadoop、pig、tez配置文件
+* 安裝hadoop-2.10.1、pig-0.17.0、hive-2.3.7、tez-0.9.2，複製環境變數文件、hadoop、pig、tez配置文件
 >`dt build`
 
 執行結果:
@@ -115,7 +115,7 @@ tez-site.xml copied
 ```
 
 ## 開啟hadoop
-*初始化hdfs
+* 初始化hdfs
 >`formatdfs`
 
 執行結果:
@@ -129,7 +129,7 @@ wka03 clean
 wka04 clean
 formathdfs ok
 ```
-*停止namenode、secondarynamenode、datanode
+* 停止namenode、secondarynamenode、datanode
 >`stophdfs`
 
 執行結果:
@@ -142,7 +142,7 @@ wka04 stop datanode...OK
 mas01 stop secondarynamenode...OK
 mas01 stop namenode...OK
 ```
-*停止resourcemanager、nodemanager、historyserver
+* 停止resourcemanager、nodemanager、historyserver
 >`stopyarn`
 
 執行結果:
@@ -155,7 +155,7 @@ wka04 stop nodemanager...OK
 mas01 stop resourcemanager...OK
 mas01 stop historyserver...OK
 ```
-*啟動namenode、secondarynamenode、datanode
+* 啟動namenode、secondarynamenode、datanode
 >`starthdfs`
 
 執行結果:
@@ -168,7 +168,7 @@ wka02 start datanode...OK
 wka03 start datanode...OK
 wka04 start datanode...OK
 ```
-*啟動resourcemanager、nodemanager、historyserver
+* 啟動resourcemanager、nodemanager、historyserver
 >`startyarn`
 
 執行結果:
@@ -181,7 +181,7 @@ wka02 start nodemanager...OK
 wka03 start nodemanager...OK
 wka04 start nodemanager...OK
 ```
-*將tez檔案複製到hdfs
+* 將tez檔案複製到hdfs
 >`buildtez`
 
 執行結果:
@@ -191,14 +191,14 @@ delete /apps/tez OK
 create /apps/tez OK
 put apache-tez-0.9.2-bin  OK
 ```
-*修改userlist，設定之後要創建的user帳號，以下參考
+* 修改userlist，設定之後要創建的user帳號，以下參考
 >`nano DT-alpine/conf/userlist`
 
 ```bash
 user01	user01
 user02	user02
 ```
-*創建user帳號，Hive初始化schema，將Hive執行引擎配置文件下載至創建好的user中
+* 創建user帳號，Hive初始化schema，將Hive執行引擎配置文件下載至創建好的user中
 >`dt.adduser`
 
 執行結果:
@@ -219,7 +219,7 @@ Init user02 derby...OK
 Add user01 .hiverc...OK
 Add user02 .hiverc...OK
 ```
-*刪除user帳號
+* 刪除user帳號
 >`dt.deluser`
 
 執行結果:
