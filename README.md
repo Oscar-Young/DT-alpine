@@ -58,6 +58,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 ## 使用dt程式部署hadoop
 
+*查看所有機器的硬體規格、IP、Gateway、JAVA版本
 >`dt sysinfo`
 
 執行結果:
@@ -74,7 +75,7 @@ openjdk version "1.8.0_252"
 OpenJDK Runtime Environment (IcedTea 3.16.0) (Alpine 8.252.09-r0)
 OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 ```
-
+*安裝JAVA，佈署環境變數
 >`dt sysprep`
 
 執行結果:
@@ -89,6 +90,7 @@ Install openjdk-1.8-jdk... OK
 Setting SSH environment... OK
 ```
 
+*解壓縮安裝
 >`dt build`
 
 執行結果:
