@@ -75,7 +75,7 @@ openjdk version "1.8.0_252"
 OpenJDK Runtime Environment (IcedTea 3.16.0) (Alpine 8.252.09-r0)
 OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 ```
-*更新套件、安裝Openjdk8、SSH環境變數設置
+*更新套件、安裝Openjdk8、allows users to present environment options to the ssh daemon
 >`dt sysprep`
 
 執行結果:
@@ -90,7 +90,7 @@ Install openjdk-1.8-jdk... OK
 Setting SSH environment... OK
 ```
 
-*解壓縮安裝
+*安裝Hadoop、Pig、Hive、Tez，複製環境變數文件、Hadoop、Pig、Tez配置文件
 >`dt build`
 
 執行結果:
@@ -115,7 +115,7 @@ tez-site.xml copied
 ```
 
 ## 開啟hadoop
-
+*
 >`formatdfs`
 
 執行結果:
