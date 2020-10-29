@@ -23,7 +23,7 @@
 
 * 產生 SSH 公私鑰
 
-`ssh-keygen -t rsa -P `
+`ssh-keygen -t rsa -P '' `
 
 * 複製公鑰至各台電腦
 
