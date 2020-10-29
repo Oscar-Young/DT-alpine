@@ -2,8 +2,6 @@
 
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/composition.jpg)
 
-`hi`
-
 ## 環境安裝及系統部署
 
 ### 以下程式皆在gw內使用
