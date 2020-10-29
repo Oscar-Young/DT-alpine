@@ -61,7 +61,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 * 將dt的執行權限打開
 
->`sudo chmod +x *`
+>`sudo chmod +x dt`
 
 * 查看所有機器的硬體規格、IP、Gateway、Openjdk版本
 >`dt sysinfo`
@@ -95,8 +95,9 @@ Install openjdk-1.8-jdk... OK
 Setting SSH environment... OK
 ```
 
-* 
+* 將gdriverdown的執行權限打開
 
+>`sudo chmod +x gdriverdown`
 
 * 安裝hadoop-2.10.1、pig-0.17.0、hive-2.3.7、tez-0.9.2，複製環境變數文件、hadoop、pig、tez配置文件
 >`dt build`
