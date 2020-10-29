@@ -220,7 +220,7 @@ Add user01 .hiverc...OK
 Add user02 .hiverc...OK
 ```
 *刪除user帳號
->`dt.adduser`
+>`dt.deluser`
 
 執行結果:
 
