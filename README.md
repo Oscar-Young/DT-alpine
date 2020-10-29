@@ -115,7 +115,7 @@ tez-site.xml copied
 ```
 
 ## 開啟hadoop
-*
+*初始化hdfs
 >`formatdfs`
 
 執行結果:
@@ -129,7 +129,7 @@ wka03 clean
 wka04 clean
 formathdfs ok
 ```
-
+*停止namenode、secondarynamenode、datanode
 >`stophdfs`
 
 執行結果:
@@ -142,7 +142,7 @@ wka04 stop datanode...OK
 mas01 stop secondarynamenode...OK
 mas01 stop namenode...OK
 ```
-
+*停止resourcemanager、nodemanager、historyserver
 >`stopyarn`
 
 執行結果:
@@ -155,7 +155,7 @@ wka04 stop nodemanager...OK
 mas01 stop resourcemanager...OK
 mas01 stop historyserver...OK
 ```
-
+*啟動namenode、secondarynamenode、datanode
 >`starthdfs`
 
 執行結果:
@@ -168,7 +168,7 @@ wka02 start datanode...OK
 wka03 start datanode...OK
 wka04 start datanode...OK
 ```
-
+*啟動resourcemanager、nodemanager、historyserver
 >`startyarn`
 
 執行結果:
@@ -181,7 +181,7 @@ wka02 start nodemanager...OK
 wka03 start nodemanager...OK
 wka04 start nodemanager...OK
 ```
-
+*將tez檔案複製到hdfs
 >`buildtez`
 
 執行結果:
@@ -189,4 +189,5 @@ wka04 start nodemanager...OK
 ```
 delete /apps/tez OK
 create /apps/tez OK
+put apache-tez-0.9.2-bin  OK
 ```
