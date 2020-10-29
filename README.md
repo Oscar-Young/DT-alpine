@@ -191,7 +191,7 @@ delete /apps/tez OK
 create /apps/tez OK
 put apache-tez-0.9.2-bin  OK
 ```
-*修改userlist，設定之後要創建的user帳號密碼，以下參考
+*修改userlist，設定之後要創建的user帳號，以下參考
 >`nano DT-alpine/conf/userlist`
 
 ```bash
@@ -218,4 +218,18 @@ Init user01 derby...OK
 Init user02 derby...OK
 Add user01 .hiverc...OK
 Add user02 .hiverc...OK
+```
+*刪除user帳號
+>`dt.adduser`
+
+執行結果:
+
+```
+Loading DT environment...OK
+--- gw ---
+user01...del
+user02...del
+---ds01---
+user01...del
+user02...del
 ```
