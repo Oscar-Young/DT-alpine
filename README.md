@@ -59,7 +59,9 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 ## 使用dt程式部署hadoop
 
-`sudo chmod +x dt`
+* 將dt的執行權限打開
+
+>`sudo chmod +x dt`
 
 * 查看所有機器的硬體規格、IP、Gateway、Openjdk版本
 >`dt sysinfo`
