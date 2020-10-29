@@ -61,7 +61,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 * 將dt的執行權限打開
 
->`sudo chmod +x dt`
+>`sudo chmod +x *`
 
 * 查看所有機器的硬體規格、IP、Gateway、Openjdk版本
 >`dt sysinfo`
