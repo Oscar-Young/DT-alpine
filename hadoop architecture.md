@@ -49,7 +49,7 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 # 研究大綱
 
-我們使用1台Raspberry Pi 3(gw)與6台研揚 UP-Board(UB)來佈署Hadoop雲端平台，Pi3 為gw、其餘6台UB 為 mas01、ds01、wka01~04 。延伸第二代Hadoop架構為基礎雲端平台相關專案，並將此架構整合到一個，完成「可攜帶式Hadoop 生態系統實驗平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討，此平台命名為「雲原生高教機」，以下為要佈署Hadoop的架構。
+我們使用1台Raspberry Pi 4(gw)與6台研揚 UP-Board(UB)來佈署Hadoop雲端平台，Pi4 為gw、其餘6台UB 為 mas01、ds01、wka01~04 。延伸第二代Hadoop架構為基礎雲端平台相關專案，並將Pi4、UB、switch、power、風扇等這些硬體設備整合到一個小型的壓克力機殼裡，完成「可攜帶式Hadoop 生態系統實驗平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討，此平台命名為「雲原生高教機」。
 
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/1603965913790.jpg)
 
