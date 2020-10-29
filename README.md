@@ -191,15 +191,14 @@ delete /apps/tez OK
 create /apps/tez OK
 put apache-tez-0.9.2-bin  OK
 ```
-* 修改userlist，以下參考
-
+*修改userlist，設定之後要創建的user帳號密碼，以下參考
 >`nano DT-alpine/conf/userlist`
 
 ```bash
 user01	user01
 user02	user02
 ```
-*
+*創建user帳號，Hive初始化schema，將Hive執行引擎配置文件下載至創建好的user中
 >`dt.adduser`
 
 執行結果:
@@ -215,5 +214,8 @@ user02 Create user01
 ---hdfs---
 Create user01 HDFS home...OK
 Create user02 HDFS home...OK
-
+Init user01 derby...OK
+Init user02 derby...OK
+Add user01 .hiverc...OK
+Add user02 .hiverc...OK
 ```
