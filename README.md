@@ -191,3 +191,29 @@ delete /apps/tez OK
 create /apps/tez OK
 put apache-tez-0.9.2-bin  OK
 ```
+* 修改userlist，以下參考
+
+>`nano DT-alpine/conf/userlist`
+
+```bash
+user01	user01
+user02	user02
+```
+*
+>`dt.adduser`
+
+執行結果:
+
+```
+Loading DT environment...OK
+--- gw ---
+user01 Create user01
+user02 Create user02
+---ds01---
+user01 Create user01
+user02 Create user01
+---hdfs---
+Create user01 HDFS home...OK
+Create user02 HDFS home...OK
+
+```
