@@ -6,6 +6,21 @@
 
 ### 以下程式皆在gw內使用
 
+* 修改hosts，請設定好自己的IP，以下參考
+
+>`nano DT-alpine/web/config/hosts`
+
+```
+127.0.0.1 localhost
+192.168.XXX.XXX gw
+192.168.XXX.XXX mas01
+192.168.XXX.XXX wka01
+192.168.XXX.XXX wka02
+192.168.XXX.XXX wka03
+192.168.XXX.XXX wka04
+192.168.XXX.XXX ds01
+```
+
 * 產生 SSH 公私鑰
 
 `ssh-keygen -t rsa -P `
@@ -29,20 +44,6 @@ export PATH=/home/username/DT-alpine/bin:$PATH
 export DT_HOME=~/DT-alpine
 ```
 
-* 修改hosts，請設定好自己的IP，以下參考
-
->`nano DT-alpine/web/config/hosts`
-
-```
-127.0.0.1 localhost
-192.168.XXX.XXX gw
-192.168.XXX.XXX mas01
-192.168.XXX.XXX wka01
-192.168.XXX.XXX wka02
-192.168.XXX.XXX wka03
-192.168.XXX.XXX wka04
-192.168.XXX.XXX ds01
-```
 
 * 修改dt環境變數，請設定好自己的IP還有資料夾路徑，以下參考
 
