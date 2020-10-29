@@ -4,7 +4,7 @@
 
 Hadoop雲端技術平台，提供儲存與處理大量資料的能力，應用在架設叢集環境，藉由平行分散檔案的處理，得到快速的回應。尤當，某節點發生錯誤時，系統自動取得備份資料及佈署運算資源。重要的是此平台，係免費資源。
 
-* Hadoop運算原理
+* Hadoop架構
 
 Hadoop 第一代平臺兩大核心 MapReduce 和 HDFS；此平台處理與分析的方法或工具，都非常仰賴 MapReduce。而現在 Hadoop 第二代架構的兩大核心是 YARN 和 HDFS，有了全新的架構 YARN，不但改善第一代 MapReduce 框架的不足，還可以讓各種處理與分析的方法或工具可以與MapReduce 平等運作，並能讀取與寫入 HDFS。第二代 Hadoop 架構和 YARN。
 
@@ -49,9 +49,9 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 # 研究大綱
 
-我們使用1台Raspberry Pi 3(Pi3)與研揚 UP-Board(UB)來部屬Hadoop雲端平台，延伸第二代Hadoop架構為基礎雲端平台相關專案，完成「可攜帶式Hadoop 生態系統實驗平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討。
+我們使用1台Raspberry Pi 3(gw)與6台研揚 UP-Board(UB)來佈署Hadoop雲端平台，Pi3 為gw、其餘6台UB 為 mas01、ds01、wka01~04 。延伸第二代Hadoop架構為基礎雲端平台相關專案，並將此架構整合到一個，完成「可攜帶式Hadoop 生態系統實驗平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討，此平台命名為「雲原生高教機」，以下為要佈署Hadoop的架構。
 
+![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/1603965913790.jpg)
 
-# 雲原生高教機環境架構
-
+# 雲原生高教機網路環境架構
 ![Alt text](https://raw.githubusercontent.com/WL107/data/main/%E6%9E%B6%E6%A7%8B%E5%9C%96.PNG)
