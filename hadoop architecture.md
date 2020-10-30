@@ -36,7 +36,7 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 # Hadoop雲端技術平台比較分析
 
-|屬性\服務|Amazon|Google App Engine|Microsoft Azure|<span style="color:orange;">Apache Hadoop</span>|
+|屬性\服務|Amazon|Google App Engine|Microsoft Azure|<font color="#dd0000">Apache Hadoop</font><br />|
 |----|----|----|----|----|
 |架構|Iass/Pass|Pass|Pass|Software|
 |服務型態|Compute/Storage|Web application|Web and non-web|Software|
@@ -49,9 +49,28 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 # 研究大綱
 
-我們使用1台Raspberry Pi 4(gw)與6台研揚 UP-Board(UB)來佈署Hadoop雲端平台，Pi4 為gw、其餘6台UB 為 mas01、ds01、wka01~04 。延伸第二代Hadoop架構為基礎雲端平台相關專案，並將Pi4、UB、switch、power、風扇等這些硬體設備整合到一個小型的壓克力機殼裡，完成「可攜帶式Hadoop 生態系統實驗平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討，此平台命名為「雲原生高教機」。
+我們使用1台Raspberry Pi 4(gw)與6台研揚 UP-Board(UB)來佈署Hadoop雲端平台，Pi4 為gw、其餘6台UB 為 mas01、ds01、wka01~04 。延伸第二代Hadoop架構為基礎雲端平台相關專案，並將Pi4、UB、switch、power、風扇等這些硬體設備整合到一個小型的壓克力機櫃裡，完成「可攜帶式Hadoop 小型分析大數據平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討，此平台命名為「雲原生高教機」。
 
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/1603965913790.jpg)
 
+# 機櫃設計圖
+![composition](https://raw.githubusercontent.com/WL107/data/main/%E6%A9%9F%E6%AB%83.jpg)
+
+
+# 實體圖
+
+![composition](https://raw.githubusercontent.com/WL107/data/main/444503.jpg)
+![composition](https://raw.githubusercontent.com/WL107/data/main/444502.jpg)
+![composition](https://raw.githubusercontent.com/WL107/data/main/444501.jpg)
+![composition](https://raw.githubusercontent.com/WL107/data/main/444500.jpg)
+
+
 # 雲原生高教機網路環境架構
 ![Alt text](https://raw.githubusercontent.com/WL107/data/main/%E6%9E%B6%E6%A7%8B%E5%9C%96.PNG)
+
+# 分析運作架構
+我們將BIG DATA導入hadoop中的hdfs裡，再由MapReduce的優化版Tez來計算處理BIG DATA，並由pig、hive分析工具來分析我們的資料，最後我們由jupyter呈現圖形化介面。
+![Alt text](https://raw.githubusercontent.com/WL107/data/main/%E5%88%86%E6%9E%90%E6%9E%B6%E6%A7%8B.PNG)
+
+# 流程
+我們首先將Pi4安裝UBUNTU OS，並且網路環境設定成兩張網卡(一張外網一張內網)，在將其餘六片UP設定好內網，之後再將六片阿寶安裝Alpine，因Alpine沒有sudo、nano、bash等指令，所以我們必須將需要用到的相關指令程式安裝好，設定好內網網卡，然後使用我們github的流程開始操作建置hadoop平台，並在此我們建構的平台上使用pig、hive來做資料分析。
