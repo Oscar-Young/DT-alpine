@@ -36,7 +36,7 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 # Hadoop雲端技術平台比較分析
 
-|屬性\服務|Amazon|Google App Engine|Microsoft Azure|<font color="#dd0000">Apache Hadoop</font><br />|
+|屬性\服務|Amazon|Google App Engine|Microsoft Azure|<span style="color:orange;">Apache Hadoop</span>|
 |----|----|----|----|----|
 |架構|Iass/Pass|Pass|Pass|Software|
 |服務型態|Compute/Storage|Web application|Web and non-web|Software|
