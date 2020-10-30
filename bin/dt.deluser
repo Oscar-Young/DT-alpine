@@ -10,7 +10,6 @@ do
   [ "$?" != 0 ] && echo "$user...not found" && continue
   sudo deluser --remove-home $user &>/dev/null && echo "$user...del"
 done < $DT_HOME/conf/userlist
-exit
 
 echo "---ds01---"
 while read user password  
