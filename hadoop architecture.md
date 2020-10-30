@@ -29,14 +29,14 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 ![Alt text](https://raw.githubusercontent.com/WL107/data/main/hdfs%E6%9E%B6%E6%A7%8B.png)
 
-<font color=#FFD700>當Client端欲從HDFS取出檔案，會再次詢問Namenode並要求檔案的block所在的位置 ( Datanode ) ，Namenode會回傳每個block被存放的Datanode的清單。</font>
+當Client端欲從HDFS取出檔案，會再次詢問Namenode並要求檔案的block所在的位置 ( Datanode ) ，Namenode會回傳每個block被存放的Datanode的清單。
 
 ![Alt text](https://raw.githubusercontent.com/WL107/data/main/hdfs%E6%9E%B6%E6%A7%8B2.png)
 
 
 # Hadoop雲端技術平台比較分析
 
-|屬性\服務|Amazon|Google App Engine|Microsoft Azure|Apache Hadoop|
+|屬性\服務|Amazon|Google App Engine|Microsoft Azure|<font color="#dd0000">Apache Hadoop</font><br />|
 |----|----|----|----|----|
 |架構|Iass/Pass|Pass|Pass|Software|
 |服務型態|Compute/Storage|Web application|Web and non-web|Software|
