@@ -1,4 +1,4 @@
-# 什麼是Hadoop
+# 雲原生高教機
 
 * Hadoop簡介
 
@@ -49,7 +49,7 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 # 研究大綱
 
-我們使用1台Raspberry Pi 4(gw)與6台研揚 UP-Board(UB)來佈署Hadoop雲端平台，Pi4 為gw、其餘6台UB 為 mas01、ds01、wka01~04 。延伸第二代Hadoop架構為基礎雲端平台相關專案，並將Pi4、UB、switch、power、風扇等這些硬體設備整合到一個小型的壓克力機櫃裡，完成「可攜帶式Hadoop 小型分析大數據平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討，此平台命名為「雲原生高教機」。
+我們使用1台Raspberry Pi 4(Pi4)與6台研揚 UP-Board(UB)來佈署Hadoop雲端平台，Pi4 為gw、其餘6台UB 為 mas01、ds01、wka01~04 。延伸第二代Hadoop架構為基礎雲端平台相關專案，並將Pi4、UB、switch、power、風扇等這些硬體設備整合到一個小型的壓克力機櫃裡，完成「可攜帶式Hadoop 小型分析大數據平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討，此平台命名為「雲原生高教機」。
 
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/1603965913790.jpg)
 
