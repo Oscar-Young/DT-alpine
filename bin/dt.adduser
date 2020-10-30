@@ -42,7 +42,7 @@ done < $DT_HOME/conf/userlist
 # Hive reset db
 while read user password
 do
-  sshpass -p $user ssh -n $user@ds01 "schematool -dbType derby -initSchema"  && echo "Init $user derby...OK"
+  sshpass -p $password ssh -n $user@ds01 "schematool -dbType derby -initSchema"  && echo "Init $user derby...OK"
   sshpass -p $password ssh -n $user@ds01 " wget -q $WEB_URL/config/.hiverc"  && echo "Add $user .hiverc...OK"
 done < $DT_HOME/conf/userlist
 
