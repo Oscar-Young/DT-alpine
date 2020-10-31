@@ -69,6 +69,7 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 # 雲原生高教機網路環境架構
 ![Alt text](https://raw.githubusercontent.com/WL107/data/main/%E6%9E%B6%E6%A7%8B%E5%9C%96.PNG)
+
 (出自本研究)
 
 # 分析運作架構
