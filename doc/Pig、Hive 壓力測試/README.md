@@ -1,7 +1,6 @@
 # 計算六都兒童口罩各數
 
 ## Pig
------------------------------------
 
 ```pig
 data = LOAD '/user/user01/01-04-2020-18-14.csv' USING PigStorage(',') AS (code:chararray,name:chararray,address:chararray,phone:chararray,adult:int,kid:int,time:chararray);
@@ -28,7 +27,6 @@ DUMP i;
 -------------------------------------
 
 ## Hive
------------------------------------
 
 ```sql
 SELECT col1,col2 FROM 
