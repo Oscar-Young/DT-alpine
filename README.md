@@ -6,9 +6,9 @@
 
 ### 以下程式皆在gw內使用
 
-* 修改hosts，請設定好自己的IP，以下參考
+* 修改etc/hosts，請設定好自己的IP，以下參考
 
->`nano DT-alpine/web/config/hosts`
+>`sudo nano etc//hosts`
 
 ```
 127.0.0.1 localhost
@@ -34,6 +34,21 @@
 * 下載github資料
 
 `git clone 'https://github.com/Oscar-Young/DT-alpine'`
+
+* 修改DT-alpine/web/config/hosts，請設定好自己的IP，以下參考
+
+>`nano DT-alpine/web/config/hosts`
+
+```
+127.0.0.1 localhost
+192.168.XXX.XXX gw
+192.168.XXX.XXX mas01
+192.168.XXX.XXX wka01
+192.168.XXX.XXX wka02
+192.168.XXX.XXX wka03
+192.168.XXX.XXX wka04
+192.168.XXX.XXX ds01
+```
 
 * 將此檔加入環境變數，請設定自己資料夾的路徑，以下參考
 
