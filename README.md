@@ -123,21 +123,27 @@ Setting SSH environment... OK
 執行結果:
 
 ```
-Loading DT environment... OK
+Loading DT environment...OK
 Web Server is already start : 192.168.XXX.XXX:XXXX
+download Aapche Hadoop-2.10.1...Please Wait
+Hadoop-2.10.1 OK
+download Aapche pig-0.17.0...Please Wait
+pig-0.17.0 OK
+download Aapche hive-2.3.7...Please Wait
+hive-2.3.7 OK
+download Aapche tez-0.9.2...Please Wait
+tez-0.9.2 OK
 [wka01]
-Install Hadoop... OK
+Hadoop is already exists
 Install Pig... OK
-Install Hive... OK
-Install Tez... OK
+Hive is already exists
+Tez is already exists
 environment copied
 hosts copied
 core-site.xml copied
 hdfs-site.xml copied
 mapred-site.xml copied
 yarn-site.xml copied
-pig.properties copied
-log4j.properties copied
 tez-site.xml copied
 ```
 
