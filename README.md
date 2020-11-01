@@ -59,6 +59,7 @@ export PATH=/home/username/DT-alpine/bin:$PATH
 export DT_HOME=~/DT-alpine
 ```
 
+>`source .bashrc`
 
 * 修改dt環境變數，請設定好自己的IP還有資料夾路徑，以下參考
 
@@ -71,6 +72,8 @@ export WEB_HOST="192.168.XXX.XXX"
 export WEB_PORT="8888"
 export WEB_URL=$WEB_HOST:$WEB_PORT
 ```
+
+>`source DT-alpine/conf/dt-env.sh`
 
 ## 使用dt程式部署hadoop
 
