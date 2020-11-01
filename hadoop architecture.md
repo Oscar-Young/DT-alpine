@@ -47,8 +47,7 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 |程式語言|AMI(Amazon Machine Image)|Python|.NET framework|JAVA|
 
 
-# 研究步驟
-
+# 簡介
 我們使用1台Raspberry Pi 4(Pi4)與6台研揚 UP-Board(UB)來佈署Hadoop雲端平台，Pi4 為gw、其餘6台UB 為 mas01、ds01、wka01~04 。延伸第二代Hadoop架構為基礎雲端平台相關專案，並將Pi4、UB、switch、power、風扇等這些硬體設備整合到一個小型的壓克力機櫃裡，完成「可攜帶式Hadoop 小型分析大數據平台」。同時，以「電腦叢集、分散式運算、可攜性」為個案探討，此平台命名為「雲原生高教機」。
 
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/1603965913790.jpg)
@@ -76,7 +75,8 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 我們將BIG DATA導入hadoop中的hdfs裡，再由MapReduce的優化版Tez來計算處理BIG DATA，並由pig、hive分析工具來分析我們的資料，最後我們由jupyter呈現圖形化介面。
 ![Alt text](https://raw.githubusercontent.com/WL107/data/main/%E5%88%86%E6%9E%90%E6%9E%B6%E6%A7%8B.PNG)
 
-# 流程介紹
+# 研究流程
+(條列式)
 我們首先將Pi4安裝UBUNTU OS，並且網路環境設定成兩張網卡(一張外網一張內網)，在將其餘六片UP設定好內網，之後再將六片阿寶安裝Alpine，因Alpine沒有sudo、nano、bash等指令，所以我們必須將需要用到的相關指令程式安裝好，設定好內網網卡，然後使用我們github的流程開始操作建置hadoop平台，並在此我們建構的平台上使用pig、hive來做資料分析。
 * 壓力測試結果
 https://github.com/Oscar-Young/DT-alpine/tree/master/doc/Pig%E3%80%81Hive%20%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6
