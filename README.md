@@ -8,7 +8,7 @@
 
 * 修改etc/hosts，請設定好自己的IP，以下參考
 
->`sudo nano etc//hosts`
+>`sudo nano etc/hosts`
 
 ```
 127.0.0.1 localhost
