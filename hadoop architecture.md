@@ -80,8 +80,9 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 * 1.Pi4安裝UBUNTU OS，並網路環境設定成兩張網卡(一張外網一張內網)
 * 2.六片阿寶安裝Alpine，並將六片UP設定好內網
 * 3.因Alpine沒有sudo、nano、bash等基礎指令，所以需要安裝好
-* 4.然後使用我們GITHUB的建置流程
+* 4.然後使用我們GITHUB的建置流程https://github.com/Oscar-Young/DT-alpine/blob/master/README.md
 * 5.使用PIG、HIVE進行資料分析
+
 我們首先將Pi4安裝UBUNTU OS，並且網路環境設定成兩張網卡(一張外網一張內網)，在將其餘六片UP設定好內網，之後再將六片阿寶安裝Alpine，因Alpine沒有sudo、nano、bash等指令，所以我們必須將需要用到的相關指令程式安裝好，設定好內網網卡，然後使用我們github的流程開始操作建置hadoop平台，並在此我們建構的平台上使用pig、hive來做資料分析。
 * 壓力測試結果
 https://github.com/Oscar-Young/DT-alpine/tree/master/doc/Pig%E3%80%81Hive%20%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6
