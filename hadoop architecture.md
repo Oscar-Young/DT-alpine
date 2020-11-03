@@ -75,7 +75,7 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 我們將BIG DATA導入hadoop中的hdfs裡，再由MapReduce的優化版Tez來計算處理BIG DATA，並由pig、hive分析工具來分析我們的資料，最後我們由jupyter呈現圖形化介面。
 ![Alt text](https://raw.githubusercontent.com/WL107/data/main/%E5%88%86%E6%9E%90%E6%9E%B6%E6%A7%8B.PNG)
 
-# 研究流程
+# 實作步驟
 
 * 1.Pi4安裝UBUNTU OS，並網路環境設定成兩張網卡(一張外網一張內網)
 
