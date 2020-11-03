@@ -59,10 +59,10 @@ HDFS的架構，由兩種角色組成，NameNode及DataNodes；前者，負責�
 
 # 實體圖
 
-![composition](https://raw.githubusercontent.com/WL107/data/main/444503.jpg)
-![composition](https://raw.githubusercontent.com/WL107/data/main/444502.jpg)
+![composition](https://github.com/WL107/data/blob/main/444503_1.jpg)
+![composition](https://raw.githubusercontent.com/WL107/data/main/444502-2.jpg)
 ![composition](https://raw.githubusercontent.com/WL107/data/main/444501.jpg)
-![composition](https://raw.githubusercontent.com/WL107/data/main/444500.jpg)
+![composition](https://github.com/WL107/data/blob/main/444500-1.jpg)
 (出自本研究)
 
 
