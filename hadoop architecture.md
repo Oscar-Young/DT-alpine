@@ -108,7 +108,7 @@ apk add openjdk8
 rm -rf /var/cache/apk/*
 ```
 
-* 4.使用我們GITHUB的建置流程https://github.com/Oscar-Young/DT-alpine/blob/master/README.
+* 4.使用我們GITHUB的建置流程https://github.com/Oscar-Young/DT-alpine/blob/master/README.md
 
 * 5.使用PIG、HIVE進行資料分析
 
