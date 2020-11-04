@@ -24,7 +24,7 @@
 
 <h2 id="install">系統與環境安裝</h2>
 
-### 以下程式皆在gw內使用
+### 以下程式皆在 gw 內使用
 
 * 修改/etc/hosts，請設定好自己的IP，以下參考
 
@@ -41,6 +41,8 @@
 192.168.XXX.XXX ds01
 ```
 
+* * * 
+
 * 產生 SSH 公私鑰
 
 > ssh-keygen -t rsa -P '' 
@@ -50,6 +52,8 @@
 > ssh-copy-id Name@Hosts
 
 >> ssh-copy-id bigred@192.168.XXX.XXX
+
+* * * 
 
 * 下載github資料
 
@@ -99,7 +103,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 > source DT-alpine/conf/dt-env.sh
 
-
+* * * 
 
 <h2 id="dt"> 使用 dt 程式部署 Hadoop </h2>
 
@@ -148,7 +152,7 @@ Setting SSH environment... OK
 
 > sudo chmod +x gdriverdown
 
-
+* * * 
 
 * 安裝 hadoop-2.10.1、pig-0.17.0、hive-2.3.7、tez-0.9.2，複製環境變數文件、hadoop、pig、tez 配置文件
 
@@ -227,6 +231,8 @@ mas01 stop resourcemanager...OK
 mas01 stop historyserver...OK
 ```
 
+* * * 
+
 * 啟動 namenode、secondarynamenode、datanode
 
 > starthdfs
@@ -239,6 +245,8 @@ wka02 start datanode...OK
 wka03 start datanode...OK
 wka04 start datanode...OK
 ```
+
+* * *
 
 * 啟動 resourcemanager、nodemanager、historyserver
 
@@ -253,6 +261,8 @@ wka03 start nodemanager...OK
 wka04 start nodemanager...OK
 ```
 
+* * * 
+
 * 將tez檔案複製到hdfs
 
 > buildtez
@@ -263,6 +273,8 @@ create /apps/tez OK
 put apache-tez-0.9.2-bin  OK
 ```
 
+* * *
+
 * 修改userlist，設定之後要創建的user帳號，以下參考
 
 > nano DT-alpine/conf/userlist
@@ -271,6 +283,8 @@ put apache-tez-0.9.2-bin  OK
 user01	user01
 user02	user02
 ```
+
+* * *
 
 * 創建user帳號，Hive初始化schema，將Hive執行引擎配置文件下載至創建好的user中
 
@@ -293,6 +307,8 @@ Add user01 .hiverc...OK
 Add user02 .hiverc...OK
 ```
 
+* * *
+
 * 刪除user帳號
 
 > dt.deluser
@@ -306,3 +322,5 @@ user02...del
 user01...del
 user02...del
 ```
+
+* * *
