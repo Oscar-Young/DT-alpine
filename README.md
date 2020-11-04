@@ -52,7 +52,7 @@
 
 > ssh-copy-id Name@Hosts
 
->> ssh-copy-id bigred@192.168.XXX.XXX
+>> ` ssh-copy-id bigred@192.168.XXX.XXX `
 
 * * * 
 
