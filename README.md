@@ -27,7 +27,7 @@
 
 ### 以下程式皆在 gw 內使用
 
-* 修改/etc/hosts，請設定好自己的IP，以下參考
+* 修改 /etc/hosts ，請設定好自己的 IP，以下參考
 
 > sudo nano /etc/hosts
 
@@ -56,11 +56,11 @@
 
 * * * 
 
-* 下載github資料
+* 下載 GitHub 資料
 
 > git clone 'https://github.com/Oscar-Young/DT-alpine'
 
-* 修改DT-alpine/web/config/hosts，請設定好自己的IP，以下參考
+* 修改 DT-alpine/web/config/hosts，請設定好自己的 IP，以下參考
 
 > nano DT-alpine/web/config/hosts
 
@@ -90,7 +90,7 @@ export DT_HOME=~/DT-alpine
 
 > source .bashrc
 
-* 修改dt環境變數，請設定好自己的IP還有資料夾路徑，以下參考
+* 修改 dt 環境變數，請設定好自己的 IP 還有資料夾路徑，以下參考
 
 > nano DT-alpine/conf/dt-env.sh
 
@@ -114,7 +114,7 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 
 * * *
 
-* 查看所有機器的硬體規格、IP、Gateway、Openjdk版本
+* 查看所有機器的硬體規格、IP、Gateway、Openjdk 版本
 
 > dt sysinfo
 
@@ -264,7 +264,7 @@ wka04 start nodemanager...OK
 
 * * * 
 
-* 將tez檔案複製到hdfs
+* 將 tez 檔案複製到 hdfs
 
 > buildtez
 
@@ -276,7 +276,7 @@ put apache-tez-0.9.2-bin  OK
 
 * * *
 
-* 修改userlist，設定之後要創建的user帳號，以下參考
+* 修改 userlist，設定之後要創建的 user 帳號，以下參考
 
 > nano DT-alpine/conf/userlist
 
@@ -287,7 +287,7 @@ user02	user02
 
 * * *
 
-* 創建user帳號，Hive初始化schema，將Hive執行引擎配置文件下載至創建好的user中
+* 創建 user 帳號，Hive 初始化 schema，將 Hive 執行引擎配置文件下載至創建好的 user 中
 
 > dt.adduser
 
@@ -310,7 +310,7 @@ Add user02 .hiverc...OK
 
 * * *
 
-* 刪除user帳號
+* 刪除 user 帳號
 
 > dt.deluser
 
