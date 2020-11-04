@@ -19,6 +19,7 @@
 
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/1603965913790.jpg)
 
+* * *
 
 <h1 id="deploy">部署</h1> 
 
