@@ -9,9 +9,6 @@
     *   [系統與環境安裝](#install)
     *   [使用 dt 程式部署 Hadoop](#dt)
     *   [開啟 Hadoop](#Hadoop)
-    *   [第四週練習](#four)
-    *   [第四週練習](#four)
-    *   [第四週練習](#four)
     
     
 * * * 
