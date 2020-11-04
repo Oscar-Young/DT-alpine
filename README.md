@@ -1,14 +1,37 @@
-# 資料科技平台 系統架構圖
+# 目錄
+
+* * * 
+
+*   [資料科技平台](#technology)
+    *   [系統架構圖](#composition)
+
+*   [部署](#deploy)
+    *   [系統與環境安裝](#install)
+    *   [使用 dt 程式部署 Hadoop](#dt)
+    *   [開啟 Hadoop](#Hadoop)
+    *   [第四週練習](#four)
+    *   [第四週練習](#four)
+    *   [第四週練習](#four)
+    
+    
+* * * 
+
+<h1 id="technology">資料科技平台</h1> 
+
+<h2 id="composition">系統架構圖</h2>
 
 ![composition](https://github.com/Oscar-Young/DT-alpine/blob/master/doc/picture/1603965913790.jpg)
 
-## 環境安裝及系統部署
+
+<h1 id="deploy">部署</h1> 
+
+<h2 id="install">系統與環境安裝</h2>
 
 ### 以下程式皆在gw內使用
 
 * 修改/etc/hosts，請設定好自己的IP，以下參考
 
->`sudo nano /etc/hosts`
+> sudo nano /etc/hosts
 
 ```
 127.0.0.1 localhost
@@ -23,21 +46,21 @@
 
 * 產生 SSH 公私鑰
 
-`ssh-keygen -t rsa -P '' `
+> ssh-keygen -t rsa -P '' 
 
 * 複製公鑰至各台電腦
 
-`ssh-copy-id Name@Hosts`
+> ssh-copy-id Name@Hosts
 
-`ssh-copy-id bigred@192.168.XXX.XXX`
+>> ssh-copy-id bigred@192.168.XXX.XXX
 
 * 下載github資料
 
-`git clone 'https://github.com/Oscar-Young/DT-alpine'`
+> git clone 'https://github.com/Oscar-Young/DT-alpine'
 
 * 修改DT-alpine/web/config/hosts，請設定好自己的IP，以下參考
 
->`nano DT-alpine/web/config/hosts`
+> nano DT-alpine/web/config/hosts
 
 ```
 127.0.0.1 localhost
@@ -50,20 +73,24 @@
 192.168.XXX.XXX ds01
 ```
 
+* * *
+
 * 將此檔加入環境變數，請設定自己資料夾的路徑，以下參考
 
->`nano .bashrc `
+> nano .bashrc
 
 ```bash
 export PATH=/home/username/DT-alpine/bin:$PATH
 export DT_HOME=~/DT-alpine
 ```
 
->`source .bashrc`
+* * *
+
+> source .bashrc
 
 * 修改dt環境變數，請設定好自己的IP還有資料夾路徑，以下參考
 
->`nano DT-alpine/conf/dt-env.sh`
+> nano DT-alpine/conf/dt-env.sh
 
 ```bash
 #!/bin/bash
@@ -73,18 +100,21 @@ export WEB_PORT="8888"
 export WEB_URL=$WEB_HOST:$WEB_PORT
 ```
 
->`source DT-alpine/conf/dt-env.sh`
+> source DT-alpine/conf/dt-env.sh
 
-## 使用dt程式部署hadoop
 
-* 將dt的執行權限打開
 
->`sudo chmod +x DT-alpine/bin/dt`
+<h2 id="dt"> 使用 dt 程式部署 Hadoop </h2>
+
+* 將 dt 的執行權限打開
+
+> sudo chmod +x DT-alpine/bin/dt
+
+* * *
 
 * 查看所有機器的硬體規格、IP、Gateway、Openjdk版本
->`dt sysinfo`
 
-執行結果:
+> dt sysinfo
 
 ```
 [wka01]
@@ -98,10 +128,12 @@ openjdk version "1.8.0_252"
 OpenJDK Runtime Environment (IcedTea 3.16.0) (Alpine 8.252.09-r0)
 OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 ```
-* 更新套件、安裝Openjdk8、allows users to present environment options to the ssh daemon
->`dt sysprep`
 
-執行結果:
+* * * 
+
+* 更新套件、安裝 Openjdk8、allows users to present environment options to the ssh daemon
+
+> dt sysprep
 
 ```
 Loading DT environment... OK
@@ -113,14 +145,17 @@ Install openjdk-1.8-jdk... OK
 Setting SSH environment... OK
 ```
 
-* 將gdriverdown的執行權限打開
+* * *
 
->`sudo chmod +x gdriverdown`
+* 將 gdriverdown 的執行權限打開
 
-* 安裝hadoop-2.10.1、pig-0.17.0、hive-2.3.7、tez-0.9.2，複製環境變數文件、hadoop、pig、tez配置文件
->`dt build`
+> sudo chmod +x gdriverdown
 
-執行結果:
+
+
+* 安裝 hadoop-2.10.1、pig-0.17.0、hive-2.3.7、tez-0.9.2，複製環境變數文件、hadoop、pig、tez 配置文件
+
+> dt build
 
 ```
 Loading DT environment...OK
@@ -147,11 +182,13 @@ yarn-site.xml copied
 tez-site.xml copied
 ```
 
-## 開啟hadoop
-* 初始化hdfs
->`formatdfs`
+* * * 
 
-執行結果:
+<h2 id="Hadoop">開啟 Hadoop</h2> 
+
+* 初始化 hdfs
+
+> formatdfs
 
 `Are you sure ? (YES/NO) YES`
 
@@ -162,10 +199,12 @@ wka03 clean
 wka04 clean
 formathdfs ok
 ```
-* 停止namenode、secondarynamenode、datanode
->`stophdfs`
 
-執行結果:
+* * *
+
+* 停止 namenode、secondarynamenode、datanode
+
+> stophdfs
 
 ```
 wka01 stop datanode...OK
@@ -175,10 +214,12 @@ wka04 stop datanode...OK
 mas01 stop secondarynamenode...OK
 mas01 stop namenode...OK
 ```
-* 停止resourcemanager、nodemanager、historyserver
->`stopyarn`
 
-執行結果:
+* * * 
+
+* 停止 resourcemanager、nodemanager、historyserver
+
+> stopyarn
 
 ```
 wka01 stop nodemanager...OK
@@ -188,10 +229,10 @@ wka04 stop nodemanager...OK
 mas01 stop resourcemanager...OK
 mas01 stop historyserver...OK
 ```
-* 啟動namenode、secondarynamenode、datanode
->`starthdfs`
 
-執行結果:
+* 啟動 namenode、secondarynamenode、datanode
+
+> starthdfs
 
 ```
 mas01 start namenode...OK
@@ -201,10 +242,10 @@ wka02 start datanode...OK
 wka03 start datanode...OK
 wka04 start datanode...OK
 ```
-* 啟動resourcemanager、nodemanager、historyserver
->`startyarn`
 
-執行結果:
+* 啟動 resourcemanager、nodemanager、historyserver
+
+> startyarn
 
 ```
 mas01 start resourcemanager...OK
@@ -214,27 +255,29 @@ wka02 start nodemanager...OK
 wka03 start nodemanager...OK
 wka04 start nodemanager...OK
 ```
-* 將tez檔案複製到hdfs
->`buildtez`
 
-執行結果:
+* 將tez檔案複製到hdfs
+
+> buildtez
 
 ```
 delete /apps/tez OK
 create /apps/tez OK
 put apache-tez-0.9.2-bin  OK
 ```
+
 * 修改userlist，設定之後要創建的user帳號，以下參考
->`nano DT-alpine/conf/userlist`
+
+> nano DT-alpine/conf/userlist
 
 ```bash
 user01	user01
 user02	user02
 ```
-* 創建user帳號，Hive初始化schema，將Hive執行引擎配置文件下載至創建好的user中
->`dt.adduser`
 
-執行結果:
+* 創建user帳號，Hive初始化schema，將Hive執行引擎配置文件下載至創建好的user中
+
+> dt.adduser
 
 ```
 Loading DT environment...OK
@@ -252,10 +295,10 @@ Init user02 derby...OK
 Add user01 .hiverc...OK
 Add user02 .hiverc...OK
 ```
-* 刪除user帳號
->`dt.deluser`
 
-執行結果:
+* 刪除user帳號
+
+> dt.deluser
 
 ```
 Loading DT environment...OK
