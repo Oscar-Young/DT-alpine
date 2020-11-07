@@ -1,7 +1,7 @@
 # 目錄
 
 * * * 
-~
+
 *   [資料科技平台](#technology)
     *   [系統架構圖](#composition)
 
