@@ -60,6 +60,10 @@
 
 > git clone 'https://github.com/Oscar-Young/DT-alpine'
 
+* 檢查是否有下載到本地
+
+> ls -al
+
 * 修改 DT-alpine/web/config/hosts，請設定好自己的 IP，以下參考
 
 > nano DT-alpine/web/config/hosts
