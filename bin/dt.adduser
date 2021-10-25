@@ -28,7 +28,7 @@ do
   # Check user
   ssh -n ds01 "id -u $user &>/dev/null"
   [ "$?" == 0 ] && echo "$user already exists" && continue
-  ssh -n ds01 "sudo adduser $user -s /bin/bash -D /home/$user && echo $password:$password |sudo chpasswd &>/dev/null" && echo "Create $user"
+  ssh -n ds01 "sudo adduser $user -s /bin/bash -D /home/$user && echo $user:$password |sudo chpasswd &>/dev/null" && echo "Create $user"
   ssh -n ds01 "sudo mkdir -p /home/$user/.ssh && sudo cp -r /home/bigred/.ssh/environment /home/$user/.ssh/environment"
 done < $DT_HOME/conf/userlist
 
