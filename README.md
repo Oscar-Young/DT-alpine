@@ -44,6 +44,14 @@
 
 * * * 
 
+* 去除 SSH yes/no的提示
+
+> sudo sh -c "echo StrictHostKeyChecking no >> /etc/ssh/ssh_config"
+
+* 重啟 SSH service
+
+> service sshd restart
+
 * 產生 SSH 公私鑰
 
 > ssh-keygen -t rsa -P '' 
