@@ -44,9 +44,9 @@
 
 * * * 
 
-* 去除 SSH yes/no的提示
+* 去除 SSH yes/no 的提示
 
-> sudo sh -c "echo StrictHostKeyChecking no >> /etc/ssh/ssh_config"
+> echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 * 重啟 SSH service
 
