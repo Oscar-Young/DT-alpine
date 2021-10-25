@@ -50,7 +50,7 @@
 
 * 重啟 SSH service
 
-> service sshd restart
+> systemctl restart ssh
 
 * 產生 SSH 公私鑰
 
@@ -60,7 +60,7 @@
 
 > ssh-copy-id Name@Hosts
 
->> ` ssh-copy-id bigred@192.168.XXX.XXX `
+> `ssh-copy-id bigred@192.168.XXX.XXX `
 
 * * * 
 
