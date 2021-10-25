@@ -27,9 +27,11 @@
 
 ### 以下程式皆在 gw 內使用
 
-* 修改 /etc/hosts ，請設定好自己的 IP，以下參考
+* 修改 /etc/hosts ，請設定好自己的 IP，以下供參考
 
-> sudo nano /etc/hosts
+```
+sudo nano /etc/hosts
+```
 
 ```
 127.0.0.1 localhost
@@ -46,35 +48,51 @@
 
 * 去除 SSH yes/no 的提示
 
-> echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+```
+echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+```
 
 * 重啟 SSH service
 
-> systemctl restart ssh
+```
+systemctl restart ssh
+```
 
 * 產生 SSH 公私鑰
 
-> ssh-keygen -t rsa -P '' 
+```
+ssh-keygen -t rsa -P '' 
+```
 
-* 複製公鑰至各台電腦
+* 複製公鑰至各台電腦，以下供參考
 
-> ssh-copy-id Name@Hosts
+```
+ssh-copy-id Name@Hosts
+```
 
-> `ssh-copy-id bigred@192.168.XXX.XXX `
+```
+ssh-copy-id bigred@192.168.XXX.XXX
+```
 
 * * * 
 
 * 下載 GitHub 資料
 
-> git clone 'https://github.com/Oscar-Young/DT-alpine'
+```
+git clone 'https://github.com/Oscar-Young/DT-alpine'
+```
 
 * 檢查是否有下載到本地
 
-> ls -al
+```
+ls -al
+```
 
-* 修改 DT-alpine/web/config/hosts，請設定好自己的 IP，以下參考
+* 修改 DT-alpine/web/config/hosts，請設定好自己的 IP，以下供參考
 
-> nano DT-alpine/web/config/hosts
+```
+nano DT-alpine/web/config/hosts
+```
 
 ```
 127.0.0.1 localhost
@@ -89,46 +107,60 @@
 
 * * *
 
-* 將此檔加入環境變數，請設定自己資料夾的路徑，以下參考
+* 將 DT-alpine 加入環境變數，請設定自己資料夾的路徑，以下供參考
 
-> nano .bashrc
+```
+nano .bashrc
+```
 
-```bash
-export PATH=/home/username/DT-alpine/bin:$PATH
+```
+export PATH=/home/$(whoami)/DT-alpine/bin:$PATH
 export DT_HOME=~/DT-alpine
 ```
 
-* * *
+* 重新載入 .bashrc 檔案，這個檔案通常只會在每次登入時被讀取
 
-> source .bashrc
+```
+source .bashrc
+```
 
-* 修改 dt 環境變數，請設定好自己的 IP 還有資料夾路徑，以下參考
+* 修改 dt 環境變數，請設定好自己的 IP 還有資料夾路徑，以下供參考
 
-> nano DT-alpine/conf/dt-env.sh
+```
+nano DT-alpine/conf/dt-env.sh
+```
 
-```bash
+```
 #!/bin/bash
-export DT_HOME="/home/username/DT-alpine"
+export DT_HOME="/home/$(whoami)/DT-alpine"
 export WEB_HOST="192.168.XXX.XXX"
 export WEB_PORT="8888"
 export WEB_URL=$WEB_HOST:$WEB_PORT
 ```
 
-> source DT-alpine/conf/dt-env.sh
+* 重新載入 dt 環境變數檔案
+
+```
+source DT-alpine/conf/dt-env.sh
+```
 
 * * * 
 
 <h2 id="dt"> 使用 dt 程式部署 Hadoop </h2>
 
-* 將 dt 的執行權限打開
+* 給予 dt 可執行的權限
 
-> sudo chmod +x DT-alpine/bin/dt
+```
+sudo chmod +x DT-alpine/bin/dt
+```
 
 * * *
 
 * 查看所有機器的硬體規格、IP、Gateway、Openjdk 版本
 
-> dt sysinfo
+```
+dt sysinfo
+```
 
 ```
 [wka01]
@@ -147,7 +179,9 @@ OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 
 * 更新套件、安裝 Openjdk8、allows users to present environment options to the ssh daemon
 
-> dt sysprep
+```
+dt sysprep
+```
 
 ```
 Loading DT environment... OK
@@ -161,15 +195,19 @@ Setting SSH environment... OK
 
 * * *
 
-* 將 gdrivedown 的執行權限打開
+* 給予 gdrivedown 可執行的權限
 
-> sudo chmod +x gdrivedown
+```
+sudo chmod +x gdrivedown
+```
 
 * * * 
 
 * 安裝 hadoop-2.10.1、pig-0.17.0、hive-2.3.7、tez-0.9.2，複製環境變數文件、hadoop、pig、tez 配置文件
 
-> dt build
+```
+dt build
+```
 
 ```
 Loading DT environment...OK
@@ -202,9 +240,15 @@ tez-site.xml copied
 
 * 初始化 hdfs
 
-> formatdfs
+```
+formatdfs
+```
 
-`Are you sure ? (YES/NO) YES`
+* 確認是否初始化，選YES
+
+```
+Are you sure ? (YES/NO) YES
+```
 
 ```
 wka01 clean
@@ -218,7 +262,9 @@ formathdfs ok
 
 * 停止 namenode、secondarynamenode、datanode
 
-> stophdfs
+```
+stophdfs
+```
 
 ```
 wka01 stop datanode...OK
@@ -233,7 +279,9 @@ mas01 stop namenode...OK
 
 * 停止 resourcemanager、nodemanager、historyserver
 
-> stopyarn
+```
+stopyarn
+```
 
 ```
 wka01 stop nodemanager...OK
@@ -248,7 +296,9 @@ mas01 stop historyserver...OK
 
 * 啟動 namenode、secondarynamenode、datanode
 
-> starthdfs
+```
+starthdfs
+```
 
 ```
 mas01 start namenode...OK
@@ -263,7 +313,9 @@ wka04 start datanode...OK
 
 * 啟動 resourcemanager、nodemanager、historyserver
 
-> startyarn
+```
+startyarn
+```
 
 ```
 mas01 start resourcemanager...OK
@@ -278,7 +330,9 @@ wka04 start nodemanager...OK
 
 * 將 tez 檔案複製到 hdfs
 
-> buildtez
+```
+buildtez
+```
 
 ```
 delete /apps/tez OK
@@ -288,20 +342,24 @@ put apache-tez-0.9.2-bin  OK
 
 * * *
 
-* 修改 userlist，設定之後要創建的 user 帳號，以下參考
+* 修改 userlist，設定之後要創建的 user 帳號密碼，以下供參考
 
-> nano DT-alpine/conf/userlist
+```
+nano DT-alpine/conf/userlist
+```
 
-```bash
-user01	user01
-user02	user02
+```
+user01	6vmZo6PS4o68413mlFjt
+user02	eHuusx0MVRi1NUmUFA3y
 ```
 
 * * *
 
 * 創建 user 帳號，Hive 初始化 schema，將 Hive 執行引擎配置文件下載至創建好的 user 中
 
-> dt.adduser
+```
+dt.adduser
+```
 
 ```
 Loading DT environment...OK
@@ -324,7 +382,9 @@ Add user02 .hiverc...OK
 
 * 刪除 user 帳號
 
-> dt.deluser
+```
+dt.deluser
+```
 
 ```
 Loading DT environment...OK
@@ -335,5 +395,3 @@ user02...del
 user01...del
 user02...del
 ```
-
-* * *
