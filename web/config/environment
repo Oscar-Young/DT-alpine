@@ -19,3 +19,13 @@ PIG_HOME=/opt/pig-0.17.0
 HADOOP_CONF_DIR=/opt/hadoop-2.10.1/etc/hadoop/
 HADOOP_ROOT_LOGGER=WARN,console
 PATH=/opt/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-1.8-openjdk/bin:/opt/hadoop-2.10.1/bin:/opt/hadoop-2.10.1/sbin:/opt/pig-0.17.0/bin:/opt/apache-hive-2.3.7-bin/bin
+
+IP=$(echo $ips | cut -d' ' -f2 | cut -d':' -f2)
+GW=$(route -n | grep -e '^0.0.0.0' | tr -s \ - | cut -d ' ' -f2)
+clear
+echo "Welcome to Alpine`cat /etc/os-release | grep 'VERSION_' | cut -d'=' -f2`"
+[ "$IP" != "" ] && echo "IP addr : $IP"
+[ "$GW" != "" ] && echo "GateWay : $GW"
+echo ""
+
+alias ll='ls -alh '
