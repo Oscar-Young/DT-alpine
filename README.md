@@ -153,9 +153,9 @@ Setting SSH environment... OK
 
 * * *
 
-* 將 gdriverdown 的執行權限打開
+* 將 gdrivedown 的執行權限打開
 
-> sudo chmod +x gdriverdown
+> sudo chmod +x gdrivedown
 
 * * * 
 
