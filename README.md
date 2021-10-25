@@ -144,17 +144,21 @@ export WEB_URL=$WEB_HOST:$WEB_PORT
 source DT-alpine/conf/dt-env.sh
 ```
 
-* * * 
-
-<h2 id="dt"> 使用 dt 程式部署 Hadoop </h2>
-
 * 給予 dt 可執行的權限
 
 ```
 sudo chmod +x DT-alpine/bin/dt
 ```
 
-* * *
+* 給予 gdrivedown 可執行的權限
+
+```
+sudo chmod +x DT-alpine/bin/gdrivedown
+```
+
+* * * 
+
+<h2 id="dt"> 使用 dt 程式部署 Hadoop </h2>
 
 * 查看所有機器的硬體規格、IP、Gateway、Openjdk 版本
 
@@ -191,14 +195,6 @@ Add apk repositories... OK
 Update apk repositories... OK
 Install openjdk-1.8-jdk... OK
 Setting SSH environment... OK
-```
-
-* * *
-
-* 給予 gdrivedown 可執行的權限
-
-```
-sudo chmod +x gdrivedown
 ```
 
 * * * 
