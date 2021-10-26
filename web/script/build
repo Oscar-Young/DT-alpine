@@ -18,6 +18,10 @@ echo "[`hostname`]"
 wget -qO - "$WEB_URL/config/environment" | sudo tee ~/.ssh/environment &>/dev/null
 [ "$?" == "0" ] && echo "environment copied"
 
+# /etc/profile
+wget -qO - "$WEB_URL/config/profile" | sudo tee /etc/profile &>/dev/null
+[ "$?" == "0" ] && echo "profile copied"
+
 # /etc/hosts
 wget -qO - "$WEB_URL/config/hosts" | sudo tee /etc/hosts &>/dev/null
 [ "$?" == "0" ] && echo "hosts copied"
