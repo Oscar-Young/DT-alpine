@@ -1,7 +1,10 @@
 # 計算六都兒童口罩各數
 
 * 資料集下載
- >`wget 'https://data.nhi.gov.tw/resource/mask/maskdata.csv'`
+
+```
+wget 'https://data.nhi.gov.tw/resource/mask/maskdata.csv'
+```
 
 ## Pig
 
