@@ -1,0 +1,21 @@
+#export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PAGER=less
+#export PS1='\h:\w\$ '
+export PS1="\u@\h:\w\$ "
+umask 022
+
+for script in /etc/profile.d/*.sh ; do
+        if [ -r $script ] ; then
+                . $script
+        fi
+done
+
+clear
+export IP=$(ifconfig $(route -n | grep 254 | cut -d ' ' -f 40) | grep 'inet ' | cut -d ' ' -f12 | cut -d ':' -f 2)
+export GW=$(route -n | grep -e '^0.0.0.0' | tr -s \ - | cut -d ' ' -f2)
+echo "Welcome to Alpine Linux : `cat /etc/alpine-release`"
+[ "$IP" != "" ] && echo "IP addr : $IP"
+[ "$GW" != "" ] && echo "GateWay : $GW"
+echo ""
+
+alias ll='ls -alh '
