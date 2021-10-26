@@ -1,9 +1,5 @@
 
-gw=$(route -n | grep -e "^0.0.0.0 ")
-GWIF=${gw##* }
-ips=$(ifconfig $GWIF | grep 'inet ')
-IP=$(echo $ips | cut -d' ' -f2)
-NETID=${IP%.*}
+IP=$(ifconfig $(route -n | grep 254 | cut -d ' ' -f 40) | grep 'inet ' | cut -d ' ' -f12 | cut -d ':' -f 2)
 GW=$(route -n | grep -e '^0.0.0.0' | tr -s \ - | cut -d ' ' -f2)
 
 echo "[`hostname`]"
