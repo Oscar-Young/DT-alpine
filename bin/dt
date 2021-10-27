@@ -4,7 +4,7 @@ echo -e "CDT 20.08\n"
 # export conf/conf.sh
 [ -f $DT_HOME/conf/dt-env.sh ] && source $DT_HOME/conf/dt-env.sh && echo 'Loading DT environment...OK'
 
-[ "$#" != 1 ] && echo 'dt [sysinfo | sysprep | build | list | restart]' && exit 1
+[ "$#" != 1 ] && echo 'dt [syscheck | sysinfo | sysprep | build | list | restart]' && exit 1
 c="sysinfo sysprep build list restart"
 [[ ! "${c}" =~ "$1" ]] && echo "Oops, wrong command" && exit 1
 
@@ -15,6 +15,14 @@ ps aux | grep -v grep | grep -o 'busybox httpd' &>/dev/null
 [ "$?" != "0" ] && echo -e "Start Web Server at : $WEB_URL" && busybox httpd -p 8888 -h $DT_HOME/web || echo "Web Server is already start : $WEB_URL"
 
 case $c in
+syscheck)
+  cat /etc/ssh/ssh_config | grep "StrictHostKeyChecking no" &>/dev/null && echo "ssh_config_setting...complete" || echo "ssh_config_setting...fail"
+  for x in $i
+  do
+    nc -w 2 -z $x 22
+    [ "$?" != "0" ] && continue
+    ssh $x ping google.com -c 1 &>/dev/null && ping yahoo.com -c 1 &>/dev/null && ping github.com -c 1 &>/dev/null && echo "$x DNS...complete" || echo "$x DNS...fail"
+  done
 sysinfo)
   for x in $i
   do
@@ -45,9 +53,9 @@ build)
   done
   ;;
 list)
-  do
-    123
-  done
+    nc -w 2 -z mas01 22
+    [ "$?" != "0" ] && continue
+    ssh mas01 hadoop dfsadmin -report | grep -E "Live datanodes|Name:"
   ;;
 restart)
   read -p "Are you sure ? (YES/NO) " ans
