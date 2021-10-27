@@ -18,7 +18,8 @@ do
   id -u $user &>/dev/null
   [ "$?" == 0 ] && echo "$user already exists" && continue
   sudo useradd -m -s /bin/bash $user &>/dev/null && echo $user:$password |sudo chpasswd &>/dev/null && echo "Create $user"
-  echo "sshpass -p'$password' ssh $user@ds01 && exit" | sudo tee -a /home/$user/.bashrc &> /dev/null
+  echo "sshpass -p'$password' ssh $user@ds01" | sudo tee -a /home/$user/.bashrc &> /dev/null
+  echo "exit" | sudo tee -a /home/$user/.bashrc &> /dev/null
 done < $DT_HOME/conf/userlist
 
 # Create User on ds01
