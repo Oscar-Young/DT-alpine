@@ -45,6 +45,9 @@ build)
   done
   ;;
 list)
+  do
+    
+  done
   ;;
 restart)
   read -p "Are you sure ? (YES/NO) " ans
