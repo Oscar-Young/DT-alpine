@@ -55,7 +55,7 @@ build)
 list)
     nc -w 2 -z mas01 22
     [ "$?" != "0" ] && continue
-    ssh mas01 hadoop dfsadmin -report | grep -E "Live datanodes|Name:"
+    ssh mas01 hadoop dfsadmin -report | grep -E "Live datanodes | Name:"
   ;;
 restart)
   read -p "Are you sure ? (YES/NO) " ans
