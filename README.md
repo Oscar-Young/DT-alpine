@@ -49,7 +49,7 @@ sudo nano /etc/hosts
 * 去除 SSH yes/no 的提示
 
 ```
-echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+echo "StrictHostKeyChecking no" | sudo tee -a /etc/ssh/ssh_config
 ```
 
 * 重啟 SSH service
