@@ -23,6 +23,7 @@ syscheck)
     [ "$?" != "0" ] && continue
     ssh $x ping google.com -c 1 &>/dev/null && ping yahoo.com -c 1 &>/dev/null && ping github.com -c 1 &>/dev/null && echo "$x DNS...complete" || echo "$x DNS...fail"
   done
+  ;;
 sysinfo)
   for x in $i
   do
