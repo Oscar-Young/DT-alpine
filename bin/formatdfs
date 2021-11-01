@@ -2,16 +2,22 @@
 read -p "Are you sure ? (YES/NO) " ans
 [ $ans != "YES" ] && echo "abort format HDFS" && exit 1
 
-ssh mas01 rm -r nn/* &>/dev/null
-ssh mas01 rm -r sn/* &>/dev/null
-
-for n in wka01 wka02 wka03 wka04 
+ds=$(cat /etc/hosts | grep -E "ds" | tr '\t' ' ' | cut -d' ' -f1)
+mas=$(cat /etc/hosts | grep -E "mas" | tr '\t' ' ' | cut -d' ' -f1)
+for x in $mas
 do
-   nc -w 1 -z $n 22 &>/dev/null
-   [ "$?" == "0" ] && ssh $n rm -r dn/* &>/dev/null
-   echo "$n clean"
+  ssh $mas rm -r nn/* &>/dev/null
+  ssh $mas rm -r sn/* &>/dev/null
 done
-
-ssh mas01 'hdfs namenode -format -clusterID cute' &>/dev/null
-[ "$?" != "0" ] && echo "formathdfs failure" && exit 1
-echo "formathdfs ok"
+for n in $ds
+do
+  nc -w 1 -z $n 22 &>/dev/null
+  [ "$?" == "0" ] && ssh $n rm -r dn/* &>/dev/null
+  echo "$n clean"
+done
+for x in $mas
+do
+  ssh $mas 'hdfs namenode -format -clusterID cute' &>/dev/null
+  [ "$?" != "0" ] && echo "formathdfs failure" && exit 1
+  echo "formathdfs ok"
+done

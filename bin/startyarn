@@ -1,6 +1,7 @@
 #!/bin/bash
-
-for n in mas01 
+wka=$(cat /etc/hosts | grep -E "wka" | tr '\t' ' ' | cut -d' ' -f1)
+mas=$(cat /etc/hosts | grep -E "mas" | tr '\t' ' ' | cut -d' ' -f1)
+for n in $mas
 do
   nc -w 1 -z $n 22 &>/dev/null
   [ "$?" != "0" ]  && echo "$n fail" && continue
@@ -8,7 +9,7 @@ do
   echo -n "$n start historyserver..." && ssh $n mr-jobhistory-daemon.sh start historyserver &>/dev/null && echo "OK" || echo "running"
 done
 
-for n in wka01 wka02 wka03 wka04 
+for n in $wka
 do
   nc -w 1 -z $n 22 &>/dev/null
   [ "$?" != "0" ]  && echo "$n fail" && continue
