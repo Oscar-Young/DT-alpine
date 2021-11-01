@@ -331,7 +331,7 @@ buildtez
 ```
 
 ```
-delete /apps/tez OK
+delete /apps/tez OK #第一次安裝fail正常
 create /apps/tez OK
 put apache-tez-0.9.2-bin  OK
 ```
