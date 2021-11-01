@@ -1,0 +1,6 @@
+sudo rm -r /opt/apache-hive-2.3.7-bin && echo "rm /opt/apache-hive-2.3.7-bin...OK"
+sudo rm -r /opt/apache-tez-0.9.2-bin  && echo "rm /opt/apache-tez-0.9.2-bin...OK"
+sudo rm -r /opt/hadoop-2.10.1 && echo "rm /opt/hadoop-2.10.1...OK"
+sudo rm -r /opt/pig-0.17.0 && echo "rm /opt/pig-0.17.0...OK"
+sudo rm ~/.ssh/environment && echo "rm .ssh/environment...OK"
+echo '127.0.0.1 localhost' | tee /etc/hosts
