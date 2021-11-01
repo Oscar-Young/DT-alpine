@@ -76,7 +76,11 @@ remove)
     nc -w 2 -z $x 22 &>/dev/null
     [ "$?" != "0" ] && echo "$x disconnect" && continue
     ssh $x "wget -qO - $WEB_URL/script/remove | bash"
-    echo "$x remove done!!!"
+<<<<<<< HEAD
+    echo "remove done!!!"
+=======
+    echo "remove done!!!"
+>>>>>>> 35891770bd8414532c9050f766e2808af9154ed8
   done
   ;;
 esac
