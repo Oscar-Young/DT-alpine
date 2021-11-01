@@ -75,7 +75,7 @@ remove)
   do
     nc -w 2 -z $x 22 &>/dev/null
     [ "$?" != "0" ] && echo "$x disconnect" && continue
-    ssh $x "wget -qO - $WEB_URL/scriptremove | bash"
+    ssh $x "wget -qO - $WEB_URL/script/remove | bash"
     echo "remove done!!!"
   done
   ;;
